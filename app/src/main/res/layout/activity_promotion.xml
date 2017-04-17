@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/hover_gray_color"
+    android:orientation="vertical"
+    android:padding="0dp">
+
+    <!--top layout-->
+    <TextView
+        android:id="@+id/PostNumTextView"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:background="@color/theme_blue"
+        android:gravity="center"
+        android:text="第二届宁波国际城市艺术博览会，带艺术回家"
+        android:textColor="@color/common_color"
+        android:textSize="15sp" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@color/common_color"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:text="艺博会介绍"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:text="艺术博览会+酒店+客房=宁波国际城市艺术博览会和酒店型艺术博览会"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:text="这是宁波第一个面向国际的酒店型艺术博览会"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:text="本届举办时间："
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:text="2016年10月28日~10月31日"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:text="本届举办地点："
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:text="宁波市南部商务区水街1号，墨憩精品酒店5层~9层。"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:text="本届开放时间："
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:text="1：10月28日开幕酒会 VIP之夜19:00~22:00"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:text="2：10月29日~10月31日公众开放日：12:00~21:00"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="normal" />
+
+
+            <ImageView
+                android:layout_width="300dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/shape_solid_border"
+                android:src="@drawable/mypic_4" />
+
+            <ImageView
+                android:layout_width="300dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/shape_solid_border"
+                android:src="@drawable/mypic_5" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <!--main bottom -->
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/bottom_button_l_width"
+            android:gravity="bottom">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="0dp"
+                    android:background="@color/common_color"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/IndexPageBtn"
+                            android:layout_width="@dimen/bottom_button_s_width"
+                            android:layout_height="@dimen/bottom_button_s_width"
+                            android:layout_marginTop="1dp"
+                            android:background="@drawable/index_empty" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp"
+                            android:gravity="center"
+                            android:text="主页"
+                            android:textColor="@color/black"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/NearbyPageBtn"
+                            android:layout_width="@dimen/bottom_button_s_width"
+                            android:layout_height="@dimen/bottom_button_s_width"
+                            android:layout_marginTop="1dp"
+                            android:background="@drawable/group_empty"
+                            android:visibility="gone"/>
+                        <Button
+                            android:id="@+id/ShopPageBtn"
+                            android:layout_width="@dimen/bottom_button_s_width"
+                            android:layout_height="@dimen/bottom_button_s_width"
+                            android:layout_marginTop="1dp"
+                            android:background="@drawable/shop_empty"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp"
+                            android:gravity="center"
+                            android:text="商店"
+                            android:textColor="@color/black"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="@dimen/bottom_button_l_width"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+                        <Button
+                            android:id="@+id/NewPostPageBtn"
+                            android:layout_width="@dimen/bottom_button_s_width"
+                            android:layout_height="@dimen/bottom_button_s_width"
+                            android:layout_marginTop="1dp"
+                            android:background="@drawable/new_post_empty" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp"
+                            android:gravity="center"
+                            android:text="发布"
+                            android:textColor="@color/black"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/messagePageBtn"
+                            android:layout_width="@dimen/bottom_button_s_width"
+                            android:layout_height="@dimen/bottom_button_s_width"
+                            android:layout_marginTop="1dp"
+                            android:background="@drawable/collection_empty" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp"
+                            android:gravity="center"
+                            android:text="收藏"
+                            android:textColor="@color/black"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/personPageBtn"
+                            android:layout_width="@dimen/bottom_button_s_width"
+                            android:layout_height="@dimen/bottom_button_s_width"
+                            android:layout_marginTop="1dp"
+                            android:background="@drawable/person_empty" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp"
+                            android:gravity="center"
+                            android:text="我的"
+                            android:textColor="@color/black"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/transparent"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:gravity="center_vertical|center_horizontal"
+            android:scaleType="fitXY"
+            android:visibility="gone">
+
+            <Button
+                android:layout_width="@dimen/bottom_button_s_width"
+                android:layout_height="@dimen/bottom_button_s_width"
+                android:background="@drawable/new_post_empty" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+</LinearLayout>

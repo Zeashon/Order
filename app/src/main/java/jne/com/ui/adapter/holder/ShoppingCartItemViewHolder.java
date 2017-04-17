@@ -1,0 +1,60 @@
+package jne.com.ui.adapter.holder;
+
+import android.view.View;
+import android.widget.TextView;
+
+import jne.com.R;
+import jne.com.base.BaseViewHolder;
+import jne.com.model.ShoppingCart;
+import jne.com.model.bean.Product;
+import jne.com.model.bean.ShoppingEntity;
+import jne.com.util.StringFetcher;
+import jne.com.widget.ShoppingCountView;
+
+import butterknife.Bind;
+
+
+
+public class ShoppingCartItemViewHolder extends BaseViewHolder<ShoppingEntity> {
+
+    @Bind(R.id.txt_name)
+    TextView mNameTxt;
+
+    @Bind(R.id.txt_price)
+    TextView mPriceTxt;
+
+    @Bind(R.id.shopping_count_view)
+    ShoppingCountView mShoppingCountView;
+
+    public ShoppingCartItemViewHolder(View itemView) {
+        super(itemView);
+    }
+
+    public void bind(ShoppingEntity entity) {
+        mNameTxt.setText(entity.getName());
+        mPriceTxt.setText(StringFetcher.getString(R.string.label_price, entity.getTotalPrice()));
+
+        final Product finalProduct = entity.getProduct();
+        int quantity = ShoppingCart.getInstance().getQuantityForProduct(finalProduct);
+        mShoppingCountView.setShoppingCount(quantity);
+        mShoppingCountView.setOnShoppingClickListener(new ShoppingCountView.ShoppingClickListener() {
+            @Override
+            public void onAddClick(int num) {
+                if (!ShoppingCart.getInstance().push(finalProduct)) {
+                    // 添加失败则恢复数量
+                    int oldQuantity = ShoppingCart.getInstance().getQuantityForProduct(finalProduct);
+                    mShoppingCountView.setShoppingCount(oldQuantity);
+                }
+            }
+
+            @Override
+            public void onMinusClick(int num) {
+                if (!ShoppingCart.getInstance().pop(finalProduct)) {
+                    // 减少失败则恢复数量
+                    int oldQuantity = ShoppingCart.getInstance().getQuantityForProduct(finalProduct);
+                    mShoppingCountView.setShoppingCount(oldQuantity);
+                }
+            }
+        });
+    }
+}
