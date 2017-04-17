@@ -33,7 +33,7 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_pre);
 
         ordersDao = new OrderDao(this);
         if (!ordersDao.isDataExist()) {
@@ -92,13 +92,13 @@ public class MainActivity extends Activity {
                 startActivity(intent);
             }
         });
-//        PromotionPageBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(MainActivity.this, PromotionActivity.class);
-//                startActivity(intent);
-//            }
-//        });
+        PromotionPageBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, PromotionActivity.class);
+                startActivity(intent);
+            }
+        });
         showPostListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -110,7 +110,7 @@ public class MainActivity extends Activity {
     }
 
     private void initComponent() {
-//        PromotionPageBtn = (ImageView) findViewById(R.id.AD_image);
+        PromotionPageBtn = (ImageView) findViewById(R.id.AD_image);
         showPostListView = (ListView) findViewById(R.id.showPostListView);
 //        showPostListView.addHeaderView(LayoutInflater.from(this).inflate(R.layout.show_post_item, null), null, false);
         SearchPageBtn = (LinearLayout) findViewById(R.id.main_top);
