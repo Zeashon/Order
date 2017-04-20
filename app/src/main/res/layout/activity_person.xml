@@ -8,7 +8,6 @@
 
     <!--top layout-->
     <LinearLayout
-        android:id="@+id/main"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -35,7 +34,6 @@
                     android:gravity="center">
 
                     <ImageView
-                        android:id="@+id/imageView2"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:layout_marginLeft="10dp"
@@ -130,7 +128,6 @@
             android:weightSum="15">
 
             <LinearLayout
-                android:id="@+id/myset_btn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/common_color"
@@ -278,7 +275,6 @@
                             android:background="@drawable/group_empty"
                             android:visibility="gone"/>
                         <Button
-                            android:id="@+id/ShopPageBtn"
                             android:layout_width="@dimen/bottom_button_s_width"
                             android:layout_height="@dimen/bottom_button_s_width"
                             android:layout_marginTop="1dp"

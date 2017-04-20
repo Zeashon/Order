@@ -36,7 +36,6 @@
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:id="@+id/imageView"
                 android:background="@drawable/logo"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="5dp" />
@@ -158,7 +157,6 @@
                             android:background="@drawable/group_empty"
                             android:visibility="gone"/>
                         <Button
-                            android:id="@+id/ShopPageBtn"
                             android:layout_width="@dimen/bottom_button_s_width"
                             android:layout_height="@dimen/bottom_button_s_width"
                             android:layout_marginTop="1dp"

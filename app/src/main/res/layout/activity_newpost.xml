@@ -38,7 +38,6 @@
                     <ImageView
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:id="@+id/imageView2"
                         android:src="@drawable/logo"
                         android:background="@drawable/shape_solid_border"
                         android:layout_gravity="center_horizontal"
@@ -94,7 +93,6 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="交付时间:"
-                                android:id="@+id/finishTime_hint"
                                 android:textColor="@color/black"
                                 android:textSize="12dp"
                                 android:layout_gravity="center_vertical|right"
@@ -119,7 +117,6 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="交付地点:"
-                                android:id="@+id/finishplace_hint"
                                 android:textColor="@color/black"
                                 android:textSize="12dp"
                                 android:layout_gravity="center_vertical|right"
@@ -147,7 +144,6 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="交付站点:"
-                                android:id="@+id/finishStation_hint"
                                 android:textColor="@color/black"
                                 android:layout_gravity="center_vertical|right"
                                 android:textSize="12dp"
@@ -184,7 +180,6 @@
 
                     <TextView
                         android:text="报酬："
-                        android:id="@+id/textView"
                         android:layout_width="wrap_content"
                         android:layout_height="20dp"
                         android:gravity="center_vertical"
@@ -220,7 +215,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="20dp"
                     android:text="联系方式："
-                    android:id="@+id/phoneNumTextHint"
                     android:gravity="center_vertical"
                     android:paddingLeft="10dp"
                     android:textColor="@color/red"
@@ -250,7 +244,6 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
-                        android:id="@+id/imageView3"
                         android:layout_weight="1"
                         android:layout_margin="3dp"
                         android:src="@drawable/mypic_1" />
@@ -258,7 +251,6 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
-                        android:id="@+id/imageView4"
                         android:layout_gravity="center_vertical"
                         android:layout_weight="1"
                         android:layout_margin="3dp"
@@ -267,7 +259,6 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
-                        android:id="@+id/imageView5"
                         android:layout_gravity="center_vertical"
                         android:layout_weight="1"
                         android:layout_margin="3dp"
@@ -314,7 +305,6 @@
                 android:visibility="gone">
 
                 <TextView
-                    android:id="@+id/dateIdTextView"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="Id"
@@ -322,7 +312,6 @@
                     android:layout_height="30dp"/>
 
                 <TextView
-                    android:id="@+id/dateOrderPriceTextView"
                     android:layout_weight="2"
                     android:gravity="center"
                     android:text="OrderPrice"
@@ -330,7 +319,6 @@
                     android:layout_height="30dp"/>
 
                 <TextView
-                    android:id="@+id/dateCustomTextView"
                     android:layout_weight="3"
                     android:gravity="center"
                     android:text="CustomName"
@@ -338,7 +326,6 @@
                     android:layout_height="30dp"/>
 
                 <TextView
-                    android:id="@+id/dateCountoryTextView"
                     android:layout_weight="2"
                     android:gravity="center"
                     android:text="Country"
@@ -415,7 +402,6 @@
                             android:background="@drawable/group_empty"
                             android:visibility="gone"/>
                         <Button
-                            android:id="@+id/ShopPageBtn"
                             android:layout_width="@dimen/bottom_button_s_width"
                             android:layout_height="@dimen/bottom_button_s_width"
                             android:layout_marginTop="1dp"

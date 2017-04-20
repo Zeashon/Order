@@ -13,7 +13,6 @@
 
         <!--top layout-->
         <LinearLayout
-            android:id="@+id/main"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -556,7 +555,6 @@
                         android:gravity="center">
 
                         <ImageView
-                            android:id="@+id/test_pic"
                             android:layout_width="160dp"
                             android:layout_height="match_parent"
                             android:background="@drawable/shape_solid_border"
@@ -610,7 +608,6 @@
                                 android:gravity="center"></LinearLayout>
 
                             <ImageView
-                                android:id="@+id/imageView2"
                                 android:layout_width="15dp"
                                 android:layout_height="15dp"
                                 android:background="@drawable/shape_solid_border"
@@ -636,6 +633,7 @@
         </LinearLayout>
 
     </ScrollView>
+
     <!--main bottom -->
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -649,7 +647,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="match_parent"
                 android:layout_gravity="bottom"
                 android:orientation="horizontal">
 
@@ -677,11 +675,11 @@
 
                         <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="10dp"
+                            android:layout_height="20dp"
                             android:gravity="center"
                             android:text="主页"
                             android:textColor="@color/black"
-                            android:textSize="7sp" />
+                            android:textSize="10sp" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -696,22 +694,44 @@
                             android:layout_width="@dimen/bottom_button_s_width"
                             android:layout_height="@dimen/bottom_button_s_width"
                             android:layout_marginTop="1dp"
-                            android:background="@drawable/group_filled" />
+                            android:background="@drawable/group_empty"
+                            android:visibility="gone"/>
+                        <Button
+                            android:layout_width="@dimen/bottom_button_s_width"
+                            android:layout_height="@dimen/bottom_button_s_width"
+                            android:layout_marginTop="1dp"
+                            android:background="@drawable/shop_empty"/>
 
                         <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="10dp"
+                            android:layout_height="20dp"
                             android:gravity="center"
-                            android:text="圈子"
+                            android:text="商店"
                             android:textColor="@color/black"
-                            android:textSize="7sp" />
+                            android:textSize="10sp" />
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="@dimen/bottom_button_l_width"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:orientation="horizontal"></LinearLayout>
+                        android:gravity="center"
+                        android:orientation="vertical">
+                        <Button
+                            android:id="@+id/NewPostPageBtn"
+                            android:layout_width="@dimen/bottom_button_s_width"
+                            android:layout_height="@dimen/bottom_button_s_width"
+                            android:layout_marginTop="1dp"
+                            android:background="@drawable/new_post_filled" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp"
+                            android:gravity="center"
+                            android:text="发布"
+                            android:textColor="@color/black"
+                            android:textSize="10sp" />
+                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -729,11 +749,11 @@
 
                         <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="10dp"
+                            android:layout_height="20dp"
                             android:gravity="center"
                             android:text="收藏"
                             android:textColor="@color/black"
-                            android:textSize="7sp" />
+                            android:textSize="10sp" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -752,11 +772,11 @@
 
                         <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="10dp"
+                            android:layout_height="20dp"
                             android:gravity="center"
                             android:text="我的"
                             android:textColor="@color/black"
-                            android:textSize="7sp" />
+                            android:textSize="10sp" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
@@ -764,23 +784,21 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:background="@drawable/transparent"
             android:clickable="false"
             android:focusable="false"
             android:focusableInTouchMode="false"
             android:gravity="center_vertical|center_horizontal"
-            android:scaleType="fitXY">
+            android:scaleType="fitXY"
+            android:visibility="gone">
 
             <Button
-                android:id="@+id/NewPostPageBtn"
-                android:layout_width="@dimen/bottom_button_l_width"
-                android:layout_height="@dimen/bottom_button_l_width"
-                android:background="@drawable/new_post_empty"
-                android:elevation="10dp" />
+                android:layout_width="@dimen/bottom_button_s_width"
+                android:layout_height="@dimen/bottom_button_s_width"
+                android:background="@drawable/new_post_empty" />
 
         </RelativeLayout>
     </RelativeLayout>
-
 
 </LinearLayout>
