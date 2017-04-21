@@ -28,7 +28,7 @@ public class MainActivity extends Activity {
     private Button PersonalPageBtn;
     private Button MainPageBtn;
     private ImageView PromotionPageBtn;
-    private Button NearbyPageBtn;
+    private Button ShopPageBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,10 +85,10 @@ public class MainActivity extends Activity {
                 startActivity(intent);
             }
         });
-        NearbyPageBtn.setOnClickListener(new View.OnClickListener() {
+        ShopPageBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, NearbyActivity.class);
+                Intent intent = new Intent(MainActivity.this, ShoppingCartActivity.class);
                 startActivity(intent);
             }
         });
@@ -118,7 +118,7 @@ public class MainActivity extends Activity {
         MessagePageBtn = (Button) findViewById(R.id.messagePageBtn);
         PersonalPageBtn = (Button) findViewById(R.id.personPageBtn);
         MainPageBtn = (Button) findViewById(R.id.IndexPageBtn);
-        NearbyPageBtn = (Button) findViewById(R.id.NearbyPageBtn);
+        ShopPageBtn = (Button) findViewById(R.id.ShopPageBtn);
 
     }
 

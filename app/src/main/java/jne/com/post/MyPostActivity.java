@@ -19,7 +19,7 @@ public class MyPostActivity extends Activity {
     private ListView showPostListView;
     private List<Order> orderList;
     private OrderListAdapter adapter;
-    private Button NearbyPageBtn;
+    private Button ShopPageBtn;
     private Button NewPostBtn;
     private Button MessagePageBtn;
     private Button PersonalPageBtn;
@@ -67,7 +67,7 @@ public class MyPostActivity extends Activity {
                 startActivity(intent);
             }
         });
-        NearbyPageBtn.setOnClickListener(new View.OnClickListener() {
+        ShopPageBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MyPostActivity.this, NearbyActivity.class);
@@ -88,7 +88,7 @@ public class MyPostActivity extends Activity {
 
         showPostListView = (ListView)findViewById(R.id.showPostListView);
 //        showPostListView.addHeaderView(LayoutInflater.from(this).inflate(R.layout.show_post_item_nocoll, null), null, false);
-        NearbyPageBtn = (Button) findViewById(R.id.NearbyPageBtn);
+        ShopPageBtn = (Button) findViewById(R.id.ShopPageBtn);
         NewPostBtn = (Button) findViewById(R.id.NewPostPageBtn);
         MessagePageBtn = (Button) findViewById(R.id.messagePageBtn);
         PersonalPageBtn = (Button) findViewById(R.id.personPageBtn);

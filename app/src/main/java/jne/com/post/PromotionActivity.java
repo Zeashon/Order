@@ -19,7 +19,7 @@ public class PromotionActivity extends Activity {
     private ListView showPostListView;
     private List<Order> orderList;
     private OrderListAdapter adapter;
-    private Button NearbyPageBtn;
+    private Button ShopPageBtn;
     private Button NewPostBtn;
     private Button MessagePageBtn;
     private Button PersonalPageBtn;
@@ -52,7 +52,7 @@ public class PromotionActivity extends Activity {
                 startActivity(intent);
             }
         });
-        NearbyPageBtn.setOnClickListener(new View.OnClickListener() {
+        ShopPageBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(PromotionActivity.this, NearbyActivity.class);
@@ -70,7 +70,7 @@ public class PromotionActivity extends Activity {
 
 
     private void initComponent(){
-        NearbyPageBtn = (Button) findViewById(R.id.NearbyPageBtn);
+        ShopPageBtn = (Button) findViewById(R.id.ShopPageBtn);
         NewPostBtn = (Button) findViewById(R.id.NewPostPageBtn);
         MessagePageBtn = (Button) findViewById(R.id.messagePageBtn);
         MainPageBtn = (Button) findViewById(R.id.IndexPageBtn);

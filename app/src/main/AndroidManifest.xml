@@ -43,6 +43,10 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateVisible|adjustPan"></activity>
         <activity
+            android:name="jne.com.post.ShoppingCartActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustPan"></activity>
+        <activity
             android:name="jne.com.post.NewPostActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateVisible|adjustPan"></activity>
