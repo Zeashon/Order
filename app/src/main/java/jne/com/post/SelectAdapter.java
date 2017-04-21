@@ -12,11 +12,12 @@ import java.text.NumberFormat;
 import jne.com.R;
 
 
-public class SelectAdapter extends RecyclerView.Adapter<SelectAdapter.ViewHolder>{
+public class SelectAdapter extends RecyclerView.Adapter<SelectAdapter.ViewHolder> {
     private ShoppingCartActivity activity;
     private SparseArray<GoodsItem> dataList;
     private NumberFormat nf;
     private LayoutInflater mInflater;
+
     public SelectAdapter(ShoppingCartActivity activity, SparseArray<GoodsItem> dataList) {
         this.activity = activity;
         this.dataList = dataList;
@@ -27,7 +28,7 @@ public class SelectAdapter extends RecyclerView.Adapter<SelectAdapter.ViewHolder
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = mInflater.inflate(R.layout.item_selected_goods,parent,false);
+        View view = mInflater.inflate(R.layout.item_selected_goods, parent, false);
         return new ViewHolder(view);
     }
 
@@ -39,15 +40,15 @@ public class SelectAdapter extends RecyclerView.Adapter<SelectAdapter.ViewHolder
 
     @Override
     public int getItemCount() {
-        if(dataList==null) {
+        if (dataList == null) {
             return 0;
         }
         return dataList.size();
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private GoodsItem item;
-        private TextView tvCost,tvCount,tvAdd,tvMinus,tvName;
+        private TextView tvCost, tvCount, tvAdd, tvMinus, tvName;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -62,7 +63,7 @@ public class SelectAdapter extends RecyclerView.Adapter<SelectAdapter.ViewHolder
 
         @Override
         public void onClick(View v) {
-            switch (v.getId()){
+            switch (v.getId()) {
                 case R.id.tvAdd:
                     activity.add(item, true);
                     break;
@@ -74,10 +75,10 @@ public class SelectAdapter extends RecyclerView.Adapter<SelectAdapter.ViewHolder
             }
         }
 
-        public void bindData(GoodsItem item){
+        public void bindData(GoodsItem item) {
             this.item = item;
             tvName.setText(item.name);
-            tvCost.setText(nf.format(item.count*item.price));
+            tvCost.setText(nf.format(item.count * item.price));
             tvCount.setText(String.valueOf(item.count));
         }
     }

@@ -9,7 +9,7 @@ import jne.com.R;
 public class AutoBuildBackgroundDrawable extends LayerDrawable {
 
     // The color filter to apply when the button is pressed
-    protected ColorFilter _pressedFilter = new LightingColorFilter(PressUtil.getColor(R.color.hover_gray_color), 1);
+    protected ColorFilter _pressedFilter = new LightingColorFilter(PressUtil.getColor(R.color.hover_grey_color), 1);
     // Alpha value when the button is disabled
     protected int _disabledAlpha = 100;
 

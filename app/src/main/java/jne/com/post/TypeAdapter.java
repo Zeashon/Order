@@ -68,7 +68,7 @@ public class TypeAdapter extends RecyclerView.Adapter<TypeAdapter.ViewHolder> {
             if(item.typeId==selectTypeId){
                 itemView.setBackgroundColor(Color.WHITE);
             }else{
-                itemView.setBackgroundColor(Color.TRANSPARENT);
+                itemView.setBackgroundColor(0xf6f6f6);
             }
 
         }

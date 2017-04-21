@@ -47,15 +47,10 @@ public class NewPostActivity extends Activity {
 
         initComponent();
 
-
-
-
         ordersDao = new OrderDao(this);
-        if (! ordersDao.isDataExist()){
+        if (!ordersDao.isDataExist()) {
             ordersDao.initTable();
         }
-
-
 
 
         MainPageBtn.setOnClickListener(new View.OnClickListener() {
@@ -102,57 +97,63 @@ public class NewPostActivity extends Activity {
                 CustomName = UserName.getText().toString().trim();
                 PhoneNum = PhoneNumText.getText().toString().trim();
                 Country = FinishStation.getText().toString().trim();
-                String month,day,year;
-                if(FnishTimeDatePicker.getMonth()+1<10){ month = "0"+(FnishTimeDatePicker.getMonth()+1); } else { month = (FnishTimeDatePicker.getMonth()+1)+""; }
-                if(FnishTimeDatePicker.getDayOfMonth()<10){ day = "0"+FnishTimeDatePicker.getDayOfMonth(); } else { day = FnishTimeDatePicker.getDayOfMonth()+""; }
-                FinishTime = FnishTimeDatePicker.getYear()+""+ month + day;
+                String month, day, year;
+                if (FnishTimeDatePicker.getMonth() + 1 < 10) {
+                    month = "0" + (FnishTimeDatePicker.getMonth() + 1);
+                } else {
+                    month = (FnishTimeDatePicker.getMonth() + 1) + "";
+                }
+                if (FnishTimeDatePicker.getDayOfMonth() < 10) {
+                    day = "0" + FnishTimeDatePicker.getDayOfMonth();
+                } else {
+                    day = FnishTimeDatePicker.getDayOfMonth() + "";
+                }
+                FinishTime = FnishTimeDatePicker.getYear() + "" + month + day;
                 Log.e(TAG, FinishTime);
-                Log.e(TAG,FnishTimeDatePicker.getMonth()+"");
+                Log.e(TAG, FnishTimeDatePicker.getMonth() + "");
                 FinishPlace = FnishPlaceEditText.getText().toString().trim();
                 PostDetail = PostDetailEditText.getText().toString().trim();
                 Remuneration = RemunerationEditorText.getText().toString().trim();
-                if(Id == ""){
-                    Toast.makeText(getApplicationContext(),"主键不能为空",Toast.LENGTH_SHORT).show();
+                if (Id.length() == 0) {
+                    Toast.makeText(getApplicationContext(), "主键不能为空", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                if ( CustomName == "" ){
-                    Toast.makeText(getApplicationContext(),"用户名不能为空",Toast.LENGTH_SHORT).show();
+                if (CustomName.length() == 0) {
+                    Toast.makeText(getApplicationContext(), "用户名不能为空", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                if (PhoneNum == ""){
-                    Toast.makeText(getApplicationContext(),"联系方式不能为空",Toast.LENGTH_SHORT).show();
+                if (PhoneNum.length() == 0) {
+                    Toast.makeText(getApplicationContext(), "联系方式不能为空", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                if (Country == ""){
-                    Toast.makeText(getApplicationContext(),"交付站点不能为空",Toast.LENGTH_SHORT).show();
+                if (Country.length() == 0) {
+                    Toast.makeText(getApplicationContext(), "交付站点不能为空", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                if (FinishTime == ""){
-                    Toast.makeText(getApplicationContext(),"交付时间不能为空",Toast.LENGTH_SHORT).show();
+                if (FinishTime.length() == 0) {
+                    Toast.makeText(getApplicationContext(), "交付时间不能为空", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                if (FinishPlace == ""){
-                    Toast.makeText(getApplicationContext(),"交付地点不能为空",Toast.LENGTH_SHORT).show();
+                if (FinishPlace.length() == 0) {
+                    Toast.makeText(getApplicationContext(), "交付地点不能为空", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                if (PostDetail == ""){
-                    Toast.makeText(getApplicationContext(),"详情不能为空",Toast.LENGTH_SHORT).show();
+                if (PostDetail.length() == 0) {
+                    Toast.makeText(getApplicationContext(), "详情不能为空", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                if (Remuneration == ""){
-                    Toast.makeText(getApplicationContext(),"报酬不能为空",Toast.LENGTH_SHORT).show();
+                if (Remuneration == "") {
+                    Toast.makeText(getApplicationContext(), "报酬不能为空", Toast.LENGTH_SHORT).show();
                     return;
-                }
-                else{
+                } else {
                     boolean res;
-                    res = ordersDao.insertData(Id, CustomName, PhoneNum, Country,FinishTime,FinishPlace,PostDetail,Remuneration,1);
-                    if (res){
-                        Toast.makeText(getApplicationContext(),"发布成功",Toast.LENGTH_SHORT).show();
+                    res = ordersDao.insertData(Id, CustomName, PhoneNum, Country, FinishTime, FinishPlace, PostDetail, Remuneration, 1);
+                    if (res) {
+                        Toast.makeText(getApplicationContext(), "发布成功", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(NewPostActivity.this, MainActivity.class);
                         startActivity(intent);
-                    }
-                    else{
-                        Toast.makeText(getApplicationContext(),"系统出错",Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(getApplicationContext(), "系统出错", Toast.LENGTH_SHORT).show();
                         return;
                     }
                 }
@@ -160,7 +161,7 @@ public class NewPostActivity extends Activity {
         });
     }
 
-    private void initComponent(){
+    private void initComponent() {
 
         ShopPageBtn = (Button) findViewById(R.id.ShopPageBtn);
         NewPostBtn = (Button) findViewById(R.id.NewPostPageBtn);
@@ -181,9 +182,9 @@ public class NewPostActivity extends Activity {
 
 
 //        setTime
-        SimpleDateFormat formatter    =   new    SimpleDateFormat    ("yyyyMMddHHmmss");
-        Date curDate    =   new    Date(System.currentTimeMillis());//获取当前时间
-        String    str    =    formatter.format(curDate);
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMddHHmmss");
+        Date curDate = new Date(System.currentTimeMillis());//获取当前时间
+        String str = formatter.format(curDate);
         Log.e(TAG, str);
         PublishTime.setText(str);
     }

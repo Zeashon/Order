@@ -79,7 +79,7 @@
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
-                            android:background="@color/hover_gray_color" />
+                            android:background="@color/hover_grey_color" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -116,7 +116,7 @@
                                 android:gravity="bottom"
                                 android:padding="5dp"
                                 android:text="2016.06.01"
-                                android:textColor="@color/gray_color"
+                                android:textColor="@color/grey_color"
                                 android:textSize="7sp" />
 
                         </LinearLayout>
@@ -182,7 +182,7 @@
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
-                            android:background="@color/hover_gray_color" />
+                            android:background="@color/hover_grey_color" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -218,7 +218,7 @@
                                 android:gravity="bottom"
                                 android:padding="5dp"
                                 android:text="2016.06.01"
-                                android:textColor="@color/gray_color"
+                                android:textColor="@color/grey_color"
                                 android:textSize="7sp" />
 
                         </LinearLayout>
@@ -284,7 +284,7 @@
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
-                            android:background="@color/hover_gray_color" />
+                            android:background="@color/hover_grey_color" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -320,7 +320,7 @@
                                 android:gravity="bottom"
                                 android:padding="5dp"
                                 android:text="2016.06.01"
-                                android:textColor="@color/gray_color"
+                                android:textColor="@color/grey_color"
                                 android:textSize="7sp" />
 
                         </LinearLayout>
@@ -386,7 +386,7 @@
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
-                            android:background="@color/hover_gray_color" />
+                            android:background="@color/hover_grey_color" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -422,7 +422,7 @@
                                 android:gravity="bottom"
                                 android:padding="5dp"
                                 android:text="2016.06.01"
-                                android:textColor="@color/gray_color"
+                                android:textColor="@color/grey_color"
                                 android:textSize="7sp" />
 
                         </LinearLayout>
@@ -488,7 +488,7 @@
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
-                            android:background="@color/hover_gray_color" />
+                            android:background="@color/hover_grey_color" />
 
 
                         <LinearLayout
@@ -526,7 +526,7 @@
                                 android:gravity="bottom"
                                 android:padding="5dp"
                                 android:text="2016.06.01"
-                                android:textColor="@color/gray_color"
+                                android:textColor="@color/grey_color"
                                 android:textSize="7sp" />
 
                         </LinearLayout>
@@ -592,7 +592,7 @@
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
-                            android:background="@color/hover_gray_color" />
+                            android:background="@color/hover_grey_color" />
 
                         <LinearLayout
                             android:layout_width="match_parent"

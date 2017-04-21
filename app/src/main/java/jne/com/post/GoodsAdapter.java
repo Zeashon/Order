@@ -1,5 +1,6 @@
 package jne.com.post;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,6 +37,7 @@ public class GoodsAdapter extends BaseAdapter implements StickyListHeadersAdapte
 
     @Override
     public View getHeaderView(int position, View convertView, ViewGroup parent) {
+        
         if(convertView==null) {
             convertView = mInflater.inflate(R.layout.item_header_view, parent, false);
         }
