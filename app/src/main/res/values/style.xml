@@ -31,14 +31,5 @@
         <item name="android:textColorHint">@color/edittext_hint_color</item>
     </style>
 
-    <style name="WindowAnimation" parent="@android:style/Animation.Activity">
-        <item name="android:activityOpenEnterAnimation">@anim/right_in</item>
-        <item name="android:activityOpenExitAnimation">@anim/left_out</item>
-        <item name="android:activityCloseEnterAnimation">@anim/left_in</item>
-        <item name="android:activityCloseExitAnimation">@anim/right_out</item>
-        <item name="android:taskOpenEnterAnimation">@anim/right_in</item>
-        <item name="android:taskOpenExitAnimation">@anim/right_out</item>
-        <item name="android:taskCloseEnterAnimation">@anim/left_in</item>
-        <item name="android:taskCloseExitAnimation">@anim/right_out</item>
-    </style>
+
 </resources>
