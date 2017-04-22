@@ -8,75 +8,75 @@
 
     <!--top layout-->
     <TextView
+        android:id="@+id/PostNumTextView"
         android:layout_width="fill_parent"
         android:layout_height="30dp"
-        android:text="New Text"
-        android:id="@+id/PostNumTextView"
         android:layout_weight="1"
-        android:gravity="center"
         android:background="@color/theme_blue"
+        android:gravity="center"
+        android:text="New Text"
         android:textColor="@color/common_color" />
 
     <LinearLayout
+        android:id="@+id/main_top"
         android:layout_width="fill_parent"
         android:layout_height="50dp"
-        android:orientation="horizontal"
-        android:id="@+id/main_top"
-        android:weightSum="15"
-        android:background="@color/theme_blue"
         android:layout_weight="1"
-        android:visibility="gone">
+        android:background="@color/theme_blue"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:weightSum="15">
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:orientation="horizontal">
 
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:background="@drawable/logo"
                 android:layout_gravity="center_vertical"
-                android:layout_marginLeft="5dp" />
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/logo" />
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:focusable="true"
-            android:focusableInTouchMode="true" >
+            android:focusableInTouchMode="true"
+            android:orientation="horizontal">
 
             <Button
+                android:id="@+id/SearchEditText"
                 android:layout_width="230dp"
                 android:layout_height="match_parent"
-                android:id="@+id/SearchEditText"
+                android:layout_marginBottom="3dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="3dp"
                 android:layout_weight="3"
-                android:hint="    车次/时间"
-                android:gravity="left|center_vertical"
                 android:background="@drawable/shape_solid_border"
-                android:layout_marginBottom="3dp" />
+                android:gravity="left|center_vertical"
+                android:hint="    车次/时间" />
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
             <Button
+                android:id="@+id/main_search_button"
                 android:layout_width="60dp"
                 android:layout_height="45dp"
-                android:text="搜索"
-                android:id="@+id/main_search_button"
                 android:layout_gravity="center_vertical|right"
+                android:layout_marginBottom="1dp"
                 android:layout_marginLeft="10dp"
-                android:background="@drawable/shape_solid_border"
                 android:layout_marginTop="1dp"
                 android:layout_weight="1.5"
-                android:layout_marginBottom="1dp" />
+                android:background="@drawable/shape_solid_border"
+                android:text="搜索" />
         </LinearLayout>
 
     </LinearLayout>
@@ -86,12 +86,12 @@
         android:id="@+id/showPostListView"
         android:layout_width="fill_parent"
         android:layout_height="525dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="9"
         android:cacheColorHint="#00000000"
         android:divider="@null"
-        android:layout_weight="9"
         android:paddingLeft="5dp"
-        android:paddingRight="5dp"
-        android:layout_marginTop="10dp" />
+        android:paddingRight="5dp" />
 
 
     <!--main bottom -->
@@ -100,9 +100,15 @@
         android:layout_height="wrap_content"
         android:background="@android:color/transparent">
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.6dp"
+            android:background="@color/grey_color" />
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/bottom_button_l_width"
+            android:layout_marginTop="1dp"
             android:gravity="bottom">
 
             <LinearLayout
@@ -155,12 +161,13 @@
                             android:layout_height="@dimen/bottom_button_s_width"
                             android:layout_marginTop="1dp"
                             android:background="@drawable/group_empty"
-                            android:visibility="gone"/>
+                            android:visibility="gone" />
+
                         <Button
                             android:layout_width="@dimen/bottom_button_s_width"
                             android:layout_height="@dimen/bottom_button_s_width"
                             android:layout_marginTop="1dp"
-                            android:background="@drawable/shop_empty"/>
+                            android:background="@drawable/shop_empty" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -177,6 +184,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:orientation="vertical">
+
                         <Button
                             android:id="@+id/NewPostPageBtn"
                             android:layout_width="@dimen/bottom_button_s_width"

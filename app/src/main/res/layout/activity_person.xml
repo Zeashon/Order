@@ -218,9 +218,15 @@
         android:layout_height="wrap_content"
         android:background="@android:color/transparent">
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.6dp"
+            android:background="@color/grey_color" />
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/bottom_button_l_width"
+            android:layout_marginTop="1dp"
             android:gravity="bottom">
 
             <LinearLayout
@@ -273,12 +279,13 @@
                             android:layout_height="@dimen/bottom_button_s_width"
                             android:layout_marginTop="1dp"
                             android:background="@drawable/group_empty"
-                            android:visibility="gone"/>
+                            android:visibility="gone" />
+
                         <Button
                             android:layout_width="@dimen/bottom_button_s_width"
                             android:layout_height="@dimen/bottom_button_s_width"
                             android:layout_marginTop="1dp"
-                            android:background="@drawable/shop_empty"/>
+                            android:background="@drawable/shop_empty" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -295,6 +302,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:orientation="vertical">
+
                         <Button
                             android:id="@+id/NewPostPageBtn"
                             android:layout_width="@dimen/bottom_button_s_width"
