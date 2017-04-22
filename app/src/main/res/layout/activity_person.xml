@@ -12,16 +12,13 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:background="@android:color/transparent"
-        android:orientation="vertical"
-        android:weightSum="15">
+        android:orientation="vertical">
 
         <LinearLayout
-            android:id="@+id/main_top"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:background="@color/common_color"
-            android:orientation="horizontal"
-            android:weightSum="15">
+            android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -42,31 +39,30 @@
                         android:src="@drawable/user_img" />
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="120dp"
-                    android:layout_height="match_parent"
-                    android:gravity="center"></LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="100dp"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Zeashon"
                         android:textColor="@color/black"
-                        android:textSize="21sp" />
+                        android:textSize="21sp"
+                        android:gravity="right"
+                        android:paddingRight="10dp"/>
 
                     <Button
                         android:layout_width="40dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:background="@color/common_color"
-                        android:text=">" />
+                        android:layout_height="40dp"
+                        android:background="@drawable/icon_right"
+                        android:layout_margin="10dp"
+                        android:layout_gravity="center"
+                        android:textColor="@color/black"/>
 
                 </LinearLayout>
             </LinearLayout>
@@ -112,13 +108,13 @@
 
                     <Button
                         android:layout_width="40dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:background="@color/common_color"
-                        android:text=">"
-                        android:textColor="@color/black"
+                        android:layout_height="40dp"
+                        android:background="@drawable/icon_right"
                         android:clickable="false"
-                        android:focusable="false"/>
+                        android:focusable="false"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:textColor="@color/black" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -162,10 +158,13 @@
 
                     <Button
                         android:layout_width="40dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:background="@color/common_color"
-                        android:text=">" />
+                        android:layout_height="40dp"
+                        android:background="@drawable/icon_right"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:textColor="@color/black" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -209,10 +208,13 @@
 
                     <Button
                         android:layout_width="40dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:background="@color/common_color"
-                        android:text=">" />
+                        android:layout_height="40dp"
+                        android:background="@drawable/icon_right"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:textColor="@color/black" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -284,13 +286,6 @@
 
                         <Button
                             android:id="@+id/ShopPageBtn"
-                            android:layout_width="@dimen/bottom_button_s_width"
-                            android:layout_height="@dimen/bottom_button_s_width"
-                            android:layout_marginTop="1dp"
-                            android:background="@drawable/group_empty"
-                            android:visibility="gone" />
-
-                        <Button
                             android:layout_width="@dimen/bottom_button_s_width"
                             android:layout_height="@dimen/bottom_button_s_width"
                             android:layout_marginTop="1dp"

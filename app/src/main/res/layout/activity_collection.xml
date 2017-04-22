@@ -160,13 +160,6 @@
                             android:layout_width="@dimen/bottom_button_s_width"
                             android:layout_height="@dimen/bottom_button_s_width"
                             android:layout_marginTop="1dp"
-                            android:background="@drawable/group_empty"
-                            android:visibility="gone" />
-
-                        <Button
-                            android:layout_width="@dimen/bottom_button_s_width"
-                            android:layout_height="@dimen/bottom_button_s_width"
-                            android:layout_marginTop="1dp"
                             android:background="@drawable/shop_empty" />
 
                         <TextView
