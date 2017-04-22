@@ -94,7 +94,7 @@
             android:layout_height="match_parent"
             android:layout_marginRight="10dp"
             android:gravity="center"
-            android:text="￥100元起送"
+            android:text="￥20元起送"
             android:textColor="#fff" />
 
         <TextView

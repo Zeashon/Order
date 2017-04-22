@@ -56,6 +56,8 @@ public class ShoppingCartActivity extends AppCompatActivity implements View.OnCl
     private NumberFormat nf;
     private Handler mHanlder;
 
+    private int minfee;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +73,7 @@ public class ShoppingCartActivity extends AppCompatActivity implements View.OnCl
         typeList = GoodsItem.getTypeList();
         selectedList = new SparseArray<>();
         groupSelect = new SparseIntArray();
+        minfee = 20;
         initView();
     }
 
@@ -78,6 +81,7 @@ public class ShoppingCartActivity extends AppCompatActivity implements View.OnCl
         tvCount = (TextView) findViewById(R.id.tvCount);
         tvCost = (TextView) findViewById(R.id.tvCost);
         tvTips = (TextView) findViewById(R.id.tvTips);
+        tvTips.setText("￥ "+ minfee +"元起送");
         tvSubmit = (TextView) findViewById(R.id.tvSubmit);
         rvType = (RecyclerView) findViewById(R.id.typeRecyclerView);
         BTMainbtn = (Button) findViewById(R.id.back_to_main);
@@ -265,7 +269,7 @@ public class ShoppingCartActivity extends AppCompatActivity implements View.OnCl
 
         tvCount.setText(String.valueOf(count));
 
-        if (cost > 99.99) {
+        if (cost > minfee) {
             tvTips.setVisibility(View.GONE);
             tvSubmit.setVisibility(View.VISIBLE);
         } else {
