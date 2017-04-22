@@ -7,11 +7,38 @@
     android:background="#f2f2f2"
     tools:context="jne.com.post.ShoppingCartActivity">
 
+    <RelativeLayout
+        android:id="@+id/shopTop"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/theme_blue"
+        android:orientation="horizontal"
+        android:textAlignment="center">
+
+        <Button
+            android:id="@+id/back_to_main"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/icon_back" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="false"
+            android:text="@string/app_name"
+            android:textColor="@color/common_color"
+            android:textSize="16sp"
+            android:gravity="center_vertical|center_horizontal"/>
+    </RelativeLayout>
+
     <include
         layout="@layout/layout_mian_shopping_cart"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/bottom" />
+        android:layout_above="@+id/bottom"
+        android:layout_below="@+id/shopTop" />
 
     <LinearLayout
         android:id="@+id/bottom"

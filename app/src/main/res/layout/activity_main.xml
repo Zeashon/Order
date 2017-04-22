@@ -93,7 +93,7 @@
             <ListView
                 android:id="@+id/showPostListView"
                 android:layout_width="fill_parent"
-                android:layout_height="1000dp"
+                android:layout_height="1200dp"
                 android:layout_weight="1"
                 android:cacheColorHint="#00000000"
                 android:choiceMode="singleChoice"

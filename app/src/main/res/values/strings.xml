@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">EasyGo</string>
+    <string name="app_name">易出行</string>
     <string name="strExecute">执行SQL</string>
     <string name="strAdd">新增</string>
     <string name="strDelete">删除</string>

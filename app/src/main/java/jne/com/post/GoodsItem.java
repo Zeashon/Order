@@ -41,7 +41,7 @@ public class GoodsItem{
 
         GoodsItem item = null;
         for(int i=1;i<8;i++){
-            for(int j=1;j<8;j++){
+            for(int j=1;j<10;j++){
                 item = new GoodsItem(100*i+j,Math.random()*20,"商品"+(100*i+j),i,typeNameList.get(i-1));
                 goodsList.add(item);
             }

@@ -1,5 +1,6 @@
 package jne.com.post;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -19,6 +20,7 @@ import android.view.animation.AnimationSet;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.TranslateAnimation;
 import android.widget.AbsListView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -41,7 +43,7 @@ public class ShoppingCartActivity extends AppCompatActivity implements View.OnCl
     private BottomSheetLayout bottomSheetLayout;
     private View bottomSheet;
     private StickyListHeadersListView listView;
-
+    private Button BTMainbtn;
 
     private ArrayList<GoodsItem> dataList, typeList;
     private SparseArray<GoodsItem> selectedList;
@@ -53,6 +55,7 @@ public class ShoppingCartActivity extends AppCompatActivity implements View.OnCl
 
     private NumberFormat nf;
     private Handler mHanlder;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,6 +80,7 @@ public class ShoppingCartActivity extends AppCompatActivity implements View.OnCl
         tvTips = (TextView) findViewById(R.id.tvTips);
         tvSubmit = (TextView) findViewById(R.id.tvSubmit);
         rvType = (RecyclerView) findViewById(R.id.typeRecyclerView);
+        BTMainbtn = (Button) findViewById(R.id.back_to_main);
 
         imgCart = (ImageView) findViewById(R.id.imgCart);
         anim_mask_layout = (RelativeLayout) findViewById(R.id.containerLayout);
@@ -109,6 +113,13 @@ public class ShoppingCartActivity extends AppCompatActivity implements View.OnCl
             }
         });
 
+        BTMainbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ShoppingCartActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 
