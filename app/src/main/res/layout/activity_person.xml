@@ -39,7 +39,6 @@
                         android:src="@drawable/user_img" />
                 </LinearLayout>
 
-
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -50,21 +49,22 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:gravity="right"
+                        android:paddingRight="10dp"
                         android:text="Zeashon"
                         android:textColor="@color/black"
-                        android:textSize="21sp"
-                        android:gravity="right"
-                        android:paddingRight="10dp"/>
+                        android:textSize="21sp" />
 
                     <Button
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:background="@drawable/icon_right"
-                        android:layout_margin="10dp"
                         android:layout_gravity="center"
-                        android:textColor="@color/black"/>
+                        android:layout_margin="10dp"
+                        android:background="@drawable/icon_right"
+                        android:textColor="@color/black" />
 
                 </LinearLayout>
+
             </LinearLayout>
 
         </LinearLayout>
@@ -109,11 +109,11 @@
                     <Button
                         android:layout_width="40dp"
                         android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
                         android:background="@drawable/icon_right"
                         android:clickable="false"
                         android:focusable="false"
-                        android:layout_gravity="center"
-                        android:layout_margin="10dp"
                         android:textColor="@color/black" />
 
                 </LinearLayout>
@@ -159,11 +159,11 @@
                     <Button
                         android:layout_width="40dp"
                         android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
                         android:background="@drawable/icon_right"
                         android:clickable="false"
                         android:focusable="false"
-                        android:layout_gravity="center"
-                        android:layout_margin="10dp"
                         android:textColor="@color/black" />
 
                 </LinearLayout>
@@ -179,6 +179,7 @@
             android:weightSum="15">
 
             <LinearLayout
+                android:id="@+id/addr_setbtn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/common_color"
@@ -189,7 +190,7 @@
                     android:layout_height="30dp"
                     android:layout_gravity="center"
                     android:layout_margin="10dp"
-                    android:background="@drawable/icon_post"></LinearLayout>
+                    android:background="@drawable/icon_addr"></LinearLayout>
 
 
                 <LinearLayout
@@ -202,22 +203,75 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="功能待建设"
+                        android:text="地址设置"
                         android:textColor="@color/black"
                         android:textSize="16sp" />
 
                     <Button
                         android:layout_width="40dp"
                         android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
                         android:background="@drawable/icon_right"
                         android:clickable="false"
                         android:focusable="false"
-                        android:layout_gravity="center"
-                        android:layout_margin="10dp"
                         android:textColor="@color/black" />
 
                 </LinearLayout>
             </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/theme_blue"
+            android:orientation="horizontal"
+            android:weightSum="15">
+
+            <LinearLayout
+                android:id="@+id/advisebtn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/common_color"
+                android:clickable="true">
+
+                <LinearLayout
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="12dp"
+                    android:background="@drawable/icon_mail"></LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="建议意见"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <Button
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/icon_right"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:textColor="@color/black" />
+
+                </LinearLayout>
+            </LinearLayout>
+
         </LinearLayout>
 
     </LinearLayout>
