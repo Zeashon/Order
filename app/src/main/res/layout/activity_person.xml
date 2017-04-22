@@ -57,7 +57,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Doom"
+                        android:text="Zeashon"
                         android:textColor="@color/black"
                         android:textSize="21sp" />
 
@@ -89,9 +89,11 @@
                 android:clickable="true">
 
                 <LinearLayout
-                    android:layout_width="60dp"
-                    android:layout_height="match_parent"
-                    android:gravity="center"></LinearLayout>
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="12.5dp"
+                    android:background="@drawable/icon_post"></LinearLayout>
 
 
                 <LinearLayout
@@ -113,7 +115,10 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:background="@color/common_color"
-                        android:text=">" />
+                        android:text=">"
+                        android:textColor="@color/black"
+                        android:clickable="false"
+                        android:focusable="false"/>
 
                 </LinearLayout>
             </LinearLayout>
@@ -134,9 +139,11 @@
                 android:clickable="true">
 
                 <LinearLayout
-                    android:layout_width="60dp"
-                    android:layout_height="match_parent"
-                    android:gravity="center"></LinearLayout>
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/icon_setting"></LinearLayout>
 
 
                 <LinearLayout
@@ -179,9 +186,11 @@
                 android:clickable="true">
 
                 <LinearLayout
-                    android:layout_width="60dp"
-                    android:layout_height="match_parent"
-                    android:gravity="center"></LinearLayout>
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/icon_post"></LinearLayout>
 
 
                 <LinearLayout

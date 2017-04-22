@@ -63,7 +63,7 @@ public class NewPostActivity extends Activity {
         ShopPageBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(NewPostActivity.this, NearbyActivity.class);
+                Intent intent = new Intent(NewPostActivity.this, ShoppingCartActivity.class);
                 startActivity(intent);
             }
         });

@@ -69,7 +69,7 @@ public class SearchActivity extends Activity {
         ShopPageBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SearchActivity.this, NearbyActivity.class);
+                Intent intent = new Intent(SearchActivity.this, ShoppingCartActivity.class);
                 startActivity(intent);
             }
         });
