@@ -3,8 +3,11 @@ package jne.com.post;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -30,6 +33,15 @@ public class MainActivity extends Activity {
     private ImageView PromotionPageBtn;
     private Button ShopPageBtn;
 
+    //    top Ad
+    private ViewPager viewPager;
+
+    private ImageView[] tips;//提示性点点数组
+
+    private int[] images;//图片ID数组
+
+    private int currentPage = 0;//当前展示的页码
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +54,67 @@ public class MainActivity extends Activity {
 
         initComponent();
 
+//        top AD
+        //图片ID数组
+
+        images = new int[]{R.drawable.mypic_1, R.drawable.mypic_2, R.drawable.mypic_3, R.drawable.mypic_4, R.drawable.mypic_5};
+        PagerAdapter imgAdapter = new PagerAdapter() {
+
+
+            @Override
+
+            public int getCount() {
+
+                // TODO Auto-generated method stub
+
+                return images.length;
+
+            }
+
+
+            @Override
+
+            public boolean isViewFromObject(View arg0, Object arg1) {
+
+                // TODO Auto-generated method stub
+
+                return arg0 == arg1;
+
+            }
+
+
+            @Override
+
+            public void destroyItem(ViewGroup container, int position, Object o) {
+
+                //container.removeViewAt(position);
+
+            }
+
+
+        //设置ViewPager指定位置要显示的view
+
+            @Override
+
+            public Object instantiateItem(ViewGroup container, int position) {
+
+                ImageView im = new ImageView(MainActivity.this);
+
+                im.setImageResource(images[position]);
+
+                im.setScaleType(ImageView.ScaleType.FIT_XY);
+
+                container.addView(im);
+
+                return im;
+
+            }
+
+        };
+
+        viewPager.setAdapter(imgAdapter);
+        
+        
         orderList = ordersDao.getAllDate();
         if (orderList != null) {
             adapter = new OrderListAdapter(this, orderList);
@@ -119,7 +192,7 @@ public class MainActivity extends Activity {
         PersonalPageBtn = (Button) findViewById(R.id.personPageBtn);
         MainPageBtn = (Button) findViewById(R.id.IndexPageBtn);
         ShopPageBtn = (Button) findViewById(R.id.ShopPageBtn);
-
+        viewPager = (ViewPager)findViewById(R.id.viewpager1);
     }
 
 }

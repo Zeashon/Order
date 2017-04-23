@@ -121,6 +121,7 @@ public class OrderDao {
 
     /**
      * 查询数据库中所有数据
+     * 第一层过滤：过滤结束时间早于当前时间的数据
      */
     public List<Order> getAllDate() {
         SQLiteDatabase db = null;
