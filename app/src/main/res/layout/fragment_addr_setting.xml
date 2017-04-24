@@ -134,7 +134,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/okBtn"
+                android:id="@+id/addr_okBtn"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
                 android:layout_gravity="top|center_horizontal"
@@ -146,7 +146,7 @@
                 android:textSize="22sp" />
 
             <Button
-                android:id="@+id/cancelBtn"
+                android:id="@+id/addr_cancelBtn"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
                 android:layout_gravity="top|center_horizontal"

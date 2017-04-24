@@ -74,7 +74,7 @@ public class OrderDao {
             db = ordersDBHelper.getWritableDatabase();
             db.beginTransaction();
 
-            db.execSQL("insert into " + OrderDBHelper.TABLE_NAME + " (Id, CustomName, PhoneNum, Country,FinishTime,FinishPlace,PostDetail,Remuneration,Type) values ('20160531191902', 'Zeashon', '18659595959', '南京站','20161221','03车D1234','希望有人能帮我带一下南京的咸水鸭，我1号会坐D1234次动车经过南京','新疆大枣400g',1)");
+            db.execSQL("insert into " + OrderDBHelper.TABLE_NAME + " (Id, CustomName, PhoneNum, Country,FinishTime,FinishPlace,PostDetail,Remuneration,Type) values ('20160531191902', 'Zeashon', '18659595959', '南京站','20171221','03车D1234','希望有人能帮我带一下南京的咸水鸭，我1号会坐D1234次动车经过南京','新疆大枣400g',1)");
             db.execSQL("insert into " + OrderDBHelper.TABLE_NAME + " (Id, CustomName, PhoneNum, Country,FinishTime,FinishPlace,PostDetail,Remuneration,Type) values ('20160531193423', 'Bor', '18659595959', '南京站','20170101','03车D1234','希望有人能帮我带一下南京的咸水鸭，我1号会坐D1234次动车经过南京','新疆大枣400g',0)");
             db.execSQL("insert into " + OrderDBHelper.TABLE_NAME + " (Id, CustomName, PhoneNum, Country,FinishTime,FinishPlace,PostDetail,Remuneration,Type) values ('20160531191476', 'Cut', '18659595959', '南京站','20170603','03车D1237','希望有人能帮我带一下南京的咸水鸭，我1号会坐D1234次动车经过南京','新疆大枣400g',0)");
             db.execSQL("insert into " + OrderDBHelper.TABLE_NAME + " (Id, CustomName, PhoneNum, Country,FinishTime,FinishPlace,PostDetail,Remuneration,Type) values ('20160133414455', 'Bor', '18659595959', '南京站','20170604','03车D1235','希望有人能帮我带一下南京的咸水鸭，我1号会坐D1234次动车经过南京','新疆大枣400g',0)");
