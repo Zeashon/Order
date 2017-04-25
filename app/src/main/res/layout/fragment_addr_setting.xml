@@ -145,17 +145,17 @@
                 android:textColor="@color/black"
                 android:textSize="22sp" />
 
-            <Button
-                android:id="@+id/addr_cancelBtn"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_gravity="top|center_horizontal"
-                android:layout_margin="20dp"
-                android:layout_weight="1"
-                android:background="@drawable/shape_solid_border"
-                android:text="跳过"
-                android:textColor="@color/black"
-                android:textSize="22sp" />
+            <!--<Button-->
+                <!--android:id="@+id/addr_cancelBtn"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="40dp"-->
+                <!--android:layout_gravity="top|center_horizontal"-->
+                <!--android:layout_margin="20dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:background="@drawable/shape_solid_border"-->
+                <!--android:text="跳过"-->
+                <!--android:textColor="@color/black"-->
+                <!--android:textSize="22sp" />-->
 
         </LinearLayout>
 

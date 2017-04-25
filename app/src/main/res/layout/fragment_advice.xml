@@ -129,7 +129,7 @@
                 android:layout_margin="20dp"
                 android:layout_weight="1"
                 android:background="@drawable/shape_solid_border"
-                android:text="确认"
+                android:text="发送"
                 android:textColor="@color/black"
                 android:textSize="22sp" />
 
