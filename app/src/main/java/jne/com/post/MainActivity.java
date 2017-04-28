@@ -17,10 +17,11 @@ import android.widget.ListView;
 import java.util.List;
 
 import jne.com.R;
+import jne.com.qr_codescan.MipcaActivityCapture;
 
 public class MainActivity extends Activity {
 
-    private String TAG = "MainActivity";
+    private String TAG = "Zeashon";
     private OrderDao ordersDao;
     private ListView showPostListView;
     private List<Order> orderList;
@@ -32,6 +33,7 @@ public class MainActivity extends Activity {
     private Button MainPageBtn;
     private ImageView PromotionPageBtn;
     private Button ShopPageBtn;
+    private Button qrScanBtn;
 
     //    top Ad
     private ViewPager viewPager;
@@ -64,9 +66,6 @@ public class MainActivity extends Activity {
             @Override
 
             public int getCount() {
-
-                // TODO Auto-generated method stub
-
                 return images.length;
 
             }
@@ -75,9 +74,6 @@ public class MainActivity extends Activity {
             @Override
 
             public boolean isViewFromObject(View arg0, Object arg1) {
-
-                // TODO Auto-generated method stub
-
                 return arg0 == arg1;
 
             }
@@ -178,7 +174,15 @@ public class MainActivity extends Activity {
                 Log.i(TAG, "你点击了第" + position + "项条目");
             }
         });
-
+        qrScanBtn = (Button) findViewById(R.id.qrScaner);
+        qrScanBtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Log.i(TAG, "click to scan qrscan");
+                Intent intent = new Intent(MainActivity.this, MipcaActivityCapture.class);
+                //TODO deal with the result of scaner.
+//                startActivityForResult(intent, Bitmap.Config.MainToMipca);
+            }
+        });
 
     }
 

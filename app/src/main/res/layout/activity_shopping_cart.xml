@@ -34,7 +34,7 @@
     </RelativeLayout>
 
     <include
-        layout="@layout/layout_mian_shopping_cart"
+        layout="@layout/layout_main_shopping_cart"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/bottom"
