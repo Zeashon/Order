@@ -265,7 +265,7 @@ public class MipcaActivityCapture extends Activity implements Callback, View.OnC
 			return;
 		}
 		Intent resultIntent = new Intent();
-        Log.i(TAG, resultString);
+        Log.i(TAG, "MipcaActivityCapture-resultString"+resultString);
 //        resultString 即为获取到的结果   Zeashon
 //		//x&y&z 0.5[0,1]&0.3[0,1]&1[0,2]
 //		String xyz[]=resultString.split("&");
@@ -289,6 +289,11 @@ public class MipcaActivityCapture extends Activity implements Callback, View.OnC
 //			Log.i(TAG,"扫描定位 fail");
 //			e.printStackTrace();
 //		}
+//		this.setResult(RESULT_OK, resultIntent);
+		Bundle bundle = new Bundle();
+		bundle.putString("result", resultString);
+//		bundle.putParcelable("bitmap", bitmap);
+		resultIntent.putExtras(bundle);
 		this.setResult(RESULT_OK, resultIntent);
 		MipcaActivityCapture.this.finish();
 	}
@@ -374,7 +379,7 @@ public class MipcaActivityCapture extends Activity implements Callback, View.OnC
 		}
 		if (vibrate) {
 			Vibrator vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
-			vibrator.vibrate(VIBRATE_DURATION);
+ 			vibrator.vibrate(VIBRATE_DURATION);
 		}
 	}
 

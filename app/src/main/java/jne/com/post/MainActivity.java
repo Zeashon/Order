@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -43,6 +44,8 @@ public class MainActivity extends Activity {
     private int[] images;//图片ID数组
 
     private int currentPage = 0;//当前展示的页码
+
+    private final static int SCANNIN_GREQUEST_CODE = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,7 +91,7 @@ public class MainActivity extends Activity {
             }
 
 
-        //设置ViewPager指定位置要显示的view
+            //设置ViewPager指定位置要显示的view
 
             @Override
 
@@ -109,8 +112,8 @@ public class MainActivity extends Activity {
         };
 
         viewPager.setAdapter(imgAdapter);
-        
-        
+
+
         orderList = ordersDao.getAllDate();
         if (orderList != null) {
             adapter = new OrderListAdapter(this, orderList);
@@ -181,9 +184,27 @@ public class MainActivity extends Activity {
                 Intent intent = new Intent(MainActivity.this, MipcaActivityCapture.class);
                 //TODO deal with the result of scaner.
 //                startActivityForResult(intent, Bitmap.Config.MainToMipca);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivityForResult(intent, SCANNIN_GREQUEST_CODE);
             }
         });
 
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (requestCode) {
+            case SCANNIN_GREQUEST_CODE:
+                if(resultCode == RESULT_OK){
+                    Bundle bundle = data.getExtras();
+                    //显示扫描到的内容
+                    String scanInfo = bundle.getString("result").toString();
+                    Log.i(TAG, "Main-resultString"+scanInfo);
+                    Toast.makeText(this,scanInfo,Toast.LENGTH_LONG).show();
+                }
+                break;
+        }
     }
 
     private void initComponent() {
@@ -196,7 +217,7 @@ public class MainActivity extends Activity {
         PersonalPageBtn = (Button) findViewById(R.id.personPageBtn);
         MainPageBtn = (Button) findViewById(R.id.IndexPageBtn);
         ShopPageBtn = (Button) findViewById(R.id.ShopPageBtn);
-        viewPager = (ViewPager)findViewById(R.id.viewpager1);
+        viewPager = (ViewPager) findViewById(R.id.viewpager1);
     }
 
 }

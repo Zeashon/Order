@@ -1,12 +1,3 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" >
+<items version="2" />
 
-    <item
-        jar="E:\Work\git\Order\app\src\main\java\lib\zxing.jar"
-        jumboMode="false"
-        revision="25.0.0"
-        sha1="e88c14e6e7daa0fa65172a62b54ee6a16ff4162d">
-        <dex dex="E:\Work\git\Order\app\build\intermediates\pre-dexed\debug\zxing_6cf2a1622e6649dd8eb184955ccc4d97608b6370.jar" />
-    </item>
-
-</items>
