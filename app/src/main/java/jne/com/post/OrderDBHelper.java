@@ -4,10 +4,6 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-/**
- * Created by Jne
- * Date: 2015/1/6.
- */
 public class OrderDBHelper extends SQLiteOpenHelper{
     private static final int DB_VERSION = 1;
     private static final String DB_NAME = "myTest.db";

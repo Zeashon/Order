@@ -11,10 +11,6 @@ import java.util.List;
 
 import jne.com.R;
 
-/**
- * Created by Jne
- * Date: 2015/1/11.
- */
 public class OrderListAdapter extends BaseAdapter{
     private String TAG = "OrderListAdapter";
     private Context context;
