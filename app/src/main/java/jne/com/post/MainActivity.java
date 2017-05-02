@@ -62,7 +62,7 @@ public class MainActivity extends Activity {
 //        top AD
         //图片ID数组
 
-        images = new int[]{R.drawable.mypic_1, R.drawable.mypic_2, R.drawable.mypic_3, R.drawable.mypic_4, R.drawable.mypic_5};
+        images = new int[]{R.drawable.mypic_4, R.drawable.mypic_2, R.drawable.mypic_3, R.drawable.mypic_4, R.drawable.mypic_5};
         PagerAdapter imgAdapter = new PagerAdapter() {
 
 
@@ -105,6 +105,15 @@ public class MainActivity extends Activity {
 
                 container.addView(im);
 
+                im.setOnClickListener(new View.OnClickListener() {
+
+                    public void onClick(View view) {
+                        Intent intent = new Intent();
+                        intent.setClass(MainActivity.this, PromotionActivity.class);
+                        startActivity(intent);
+                    }
+                });
+
                 return im;
 
             }
@@ -112,7 +121,6 @@ public class MainActivity extends Activity {
         };
 
         viewPager.setAdapter(imgAdapter);
-
 
         orderList = ordersDao.getAllDate();
         if (orderList != null) {
@@ -196,12 +204,12 @@ public class MainActivity extends Activity {
         super.onActivityResult(requestCode, resultCode, data);
         switch (requestCode) {
             case SCANNIN_GREQUEST_CODE:
-                if(resultCode == RESULT_OK){
+                if (resultCode == RESULT_OK) {
                     Bundle bundle = data.getExtras();
                     //显示扫描到的内容
                     String scanInfo = bundle.getString("result").toString();
-                    Log.i(TAG, "Main-resultString"+scanInfo);
-                    Toast.makeText(this,scanInfo,Toast.LENGTH_LONG).show();
+                    Log.i(TAG, "Main-resultString" + scanInfo);
+                    Toast.makeText(this, scanInfo, Toast.LENGTH_LONG).show();
                 }
                 break;
         }
