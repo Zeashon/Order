@@ -52,7 +52,7 @@ public class SplashActivity extends Activity {
         finish();
     }
     private void skipActivityToAddr() {
-        startActivity(new Intent(this, MainActivity.class));
+        startActivity(new Intent(this, AddrSettingActivity.class));
         finish();
     }
 }
