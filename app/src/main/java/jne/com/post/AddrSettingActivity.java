@@ -80,7 +80,7 @@ public class AddrSettingActivity extends Activity {
                 //      get user
                 String user = "Zeashon";
 
-                //TODO   write to comfrence
+                //   write to comfrence
                 //1、打开Preferences，名称为addSetting，如果存在则打开它，否则创建新的Preferences
                 SharedPreferences addrSetting = getSharedPreferences("addrSetting", Activity.MODE_PRIVATE);
                 //2、让addSetting处于编辑状态

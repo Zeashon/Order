@@ -278,7 +278,6 @@ public class MipcaActivityCapture extends Activity implements Callback, View.OnC
         String res[] = resultString.split("&");
         String checked = "N", time, train, room, seat;
         if (res[0].equals("easygo") && res[1].equals("addr")) {
-
             try {
                 time = res[2];
                 train = res[3];

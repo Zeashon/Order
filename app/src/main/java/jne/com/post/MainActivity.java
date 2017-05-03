@@ -53,19 +53,13 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //1、获取Preferences
-        SharedPreferences addrSetting = getSharedPreferences("addSetting", 0);
-        //2、取出数据
-        String name = addrSetting.getString("user","default");
-        String url = addrSetting.getString("time","default");
-
-
+        initComponent();
         ordersDao = new OrderDao(this);
         if (!ordersDao.isDataExist()) {
             ordersDao.initTable();
         }
-
-        initComponent();
+        //刷新 列表
+        refreshList();
 
 //        top AD
         //图片ID数组
@@ -75,7 +69,6 @@ public class MainActivity extends Activity {
 
 
             @Override
-
             public int getCount() {
                 return images.length;
 
@@ -83,7 +76,6 @@ public class MainActivity extends Activity {
 
 
             @Override
-
             public boolean isViewFromObject(View arg0, Object arg1) {
                 return arg0 == arg1;
 
@@ -91,18 +83,15 @@ public class MainActivity extends Activity {
 
 
             @Override
-
             public void destroyItem(ViewGroup container, int position, Object o) {
 
                 //container.removeViewAt(position);
 
             }
 
-
             //设置ViewPager指定位置要显示的view
 
             @Override
-
             public Object instantiateItem(ViewGroup container, int position) {
 
                 ImageView im = new ImageView(MainActivity.this);
@@ -130,11 +119,6 @@ public class MainActivity extends Activity {
 
         viewPager.setAdapter(imgAdapter);
 
-        orderList = ordersDao.getAllDate();
-        if (orderList != null) {
-            adapter = new OrderListAdapter(this, orderList);
-            showPostListView.setAdapter(adapter);
-        }
 
         SearchPageBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -206,22 +190,59 @@ public class MainActivity extends Activity {
 
     }
 
-//    回调处理扫描信息
+    //回调
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        Bundle bundle = null;
         switch (requestCode) {
             case SCANNIN_GREQUEST_CODE:
                 if (resultCode == RESULT_OK) {
-                    Bundle bundle = data.getExtras();
-                    //显示扫描到的内容
-                    String scanInfo = bundle.getString("result").toString();
-                    Log.i(TAG, "Main-resultString" + scanInfo);
-                    Toast.makeText(this, scanInfo, Toast.LENGTH_LONG).show();
+                    try {
+                        bundle = data.getExtras();//防止空返回
+                        //显示扫描到的内容
+                        String scanInfo = bundle.getString("result").toString();
+                        Log.i(TAG, "Main-resultString" + scanInfo);
+                        Toast.makeText(this, scanInfo, Toast.LENGTH_LONG).show();
+                        String checked = bundle.getString("checked");
+                        String time, train, room, seat;
+                        if (checked.equals("Y")) {
+                            try {
+                                time = bundle.getString("time");
+                                train = bundle.getString("train");
+                                room = bundle.getString("room");
+                                seat = bundle.getString("seat");
+                                //   write to comfrence
+                                //1、打开Preferences，名称为addSetting，如果存在则打开它，否则创建新的Preferences
+                                SharedPreferences addrSetting = getSharedPreferences("addrSetting", Activity.MODE_PRIVATE);
+                                //2、让addSetting处于编辑状态
+                                SharedPreferences.Editor editor = addrSetting.edit();
+                                //3、存放数据
+                                editor.putString("checked", "Y");
+                                editor.putString("time", time);
+                                editor.putString("train", train);
+                                editor.putString("room", room);
+                                editor.putString("seat", seat);
+                                //4、完成提交
+                                editor.commit();
+                                Toast.makeText(MainActivity.this, " " + time + " " + train + " " + room + " " + seat, Toast.LENGTH_LONG).show();
+                                refreshList();
+                            } catch (Exception e) {
+                                return;
+                            }
+                        } else {
+                            Toast.makeText(this, "获取车票信息失败", Toast.LENGTH_LONG).show();
+                        }
+                    } catch (Exception e) {
+                        return;
+                    }
                 }
                 break;
         }
+
+
     }
+
 
     private void initComponent() {
         PromotionPageBtn = (ImageView) findViewById(R.id.AD_image);
@@ -237,4 +258,24 @@ public class MainActivity extends Activity {
         qrScanBtn = (Button) findViewById(R.id.qrScaner);
     }
 
+    private void refreshList() {
+        //1、获取Preferences
+        SharedPreferences addrSetting = getSharedPreferences("addrSetting", 0);
+        //2、取出数据
+        String checked = addrSetting.getString("checked", "N");
+        if (checked.equals("Y")) {
+            String time = addrSetting.getString("time", "default");
+            String train = addrSetting.getString("train", "default");
+            String room = addrSetting.getString("room", "default");
+            String seat = addrSetting.getString("seat", "default");
+            orderList = ordersDao.getAccurateOrder(time + "&" + room + "车" + train);
+        } else {
+            orderList = ordersDao.getAllDate();
+        }
+        if (orderList != null) {
+            adapter = new OrderListAdapter(this, orderList);
+            showPostListView.setAdapter(adapter);
+        }
+
+    }
 }

@@ -70,7 +70,7 @@ public class OrderDao {
             db = ordersDBHelper.getWritableDatabase();
             db.beginTransaction();
 
-            db.execSQL("insert into " + OrderDBHelper.TABLE_NAME + " (Id, CustomName, PhoneNum, Country,FinishTime,FinishPlace,PostDetail,Remuneration,Type) values ('20160531191902', 'Zeashon', '18659595959', '南京站','20171221','03车D1234','希望有人能帮我带一下南京的咸水鸭，我1号会坐D1234次动车经过南京','新疆大枣400g',1)");
+            db.execSQL("insert into " + OrderDBHelper.TABLE_NAME + " (Id, CustomName, PhoneNum, Country,FinishTime,FinishPlace,PostDetail,Remuneration,Type) values ('20160531191902', 'Zeashon', '18659595959', '南京站','20170604','03车D1237','希望有人能帮我带一下南京的咸水鸭，我1号会坐D1234次动车经过南京','新疆大枣400g',1)");
             db.execSQL("insert into " + OrderDBHelper.TABLE_NAME + " (Id, CustomName, PhoneNum, Country,FinishTime,FinishPlace,PostDetail,Remuneration,Type) values ('20160531193423', 'Bor', '18659595959', '南京站','20170101','03车D1234','希望有人能帮我带一下南京的咸水鸭，我1号会坐D1234次动车经过南京','新疆大枣400g',0)");
             db.execSQL("insert into " + OrderDBHelper.TABLE_NAME + " (Id, CustomName, PhoneNum, Country,FinishTime,FinishPlace,PostDetail,Remuneration,Type) values ('20160531191476', 'Cut', '18659595959', '南京站','20170603','03车D1237','希望有人能帮我带一下南京的咸水鸭，我1号会坐D1234次动车经过南京','新疆大枣400g',0)");
             db.execSQL("insert into " + OrderDBHelper.TABLE_NAME + " (Id, CustomName, PhoneNum, Country,FinishTime,FinishPlace,PostDetail,Remuneration,Type) values ('20160133414455', 'Bor', '18659595959', '南京站','20170604','03车D1235','希望有人能帮我带一下南京的咸水鸭，我1号会坐D1234次动车经过南京','新疆大枣400g',0)");
@@ -356,14 +356,48 @@ public class OrderDao {
 
         try {
             db = ordersDBHelper.getReadableDatabase();
-
-            // select * from Orders where CustomName = 'Bor'
             cursor = db.query(OrderDBHelper.TABLE_NAME,
                     ORDER_COLUMNS,
                     "FinishPlace = ? or FinishTime = ?",
                     new String[]{keyWord, keyWord},
                     null, null, null);
 
+            if (cursor.getCount() > 0) {
+                List<Order> orderList = new ArrayList<Order>(cursor.getCount());
+                while (cursor.moveToNext()) {
+                    Order order = parseOrder(cursor);
+                    orderList.add(order);
+                }
+                return orderList;
+            }
+        } catch (Exception e) {
+            Log.e(TAG, "", e);
+        } finally {
+            if (cursor != null) {
+                cursor.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+
+        return null;
+    }
+
+    //    查询准确车次（格式：03车D1234）&& 时间 （2016.06.01）
+    public List<Order> getAccurateOrder(String keyWord) {
+        SQLiteDatabase db = null;
+        Cursor cursor = null;
+        String[] str = keyWord.split("&");
+        Log.e(TAG , "FinishPlace = "+str[0]+" and FinishTime =  "+str[1]);
+        try {
+            db = ordersDBHelper.getReadableDatabase();
+            cursor = db.query(OrderDBHelper.TABLE_NAME,
+                    ORDER_COLUMNS,
+                    "FinishPlace = ? and FinishTime = ?",
+                    new String[]{str[1], str[0]},
+                    null, null, null);
+            Log.e(TAG,String.valueOf(cursor.getCount()));
             if (cursor.getCount() > 0) {
                 List<Order> orderList = new ArrayList<Order>(cursor.getCount());
                 while (cursor.moveToNext()) {
@@ -473,7 +507,7 @@ public class OrderDao {
 
             // update Orders set Type = 2 where Id = id
             ContentValues cv = new ContentValues();
-            cv.put("Type", (2-type) );
+            cv.put("Type", (2 - type));
             db.update(OrderDBHelper.TABLE_NAME,
                     cv,
                     "Id = ?",
