@@ -3,6 +3,7 @@ package jne.com.post;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Layout;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -29,6 +30,8 @@ public class PersonActivity extends Activity {
     private Button SearchBtn;
     private EditText SearchEditText;
     private TextView PostNumTextView;
+    private LinearLayout AddrSettingPageBtn;
+    private LinearLayout AdvicePageBtn;
 
     public PersonActivity() {
     }
@@ -75,6 +78,20 @@ public class PersonActivity extends Activity {
                 startActivity(intent);
             }
         });
+        AddrSettingPageBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PersonActivity.this, AddrSettingActivity.class);
+                startActivity(intent);
+            }
+        });
+        AdvicePageBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PersonActivity.this, AdviceActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 
@@ -84,6 +101,8 @@ public class PersonActivity extends Activity {
         NewPostBtn = (Button) findViewById(R.id.NewPostPageBtn);
         MessagePageBtn = (Button) findViewById(R.id.messagePageBtn);
         MainPageBtn = (Button) findViewById(R.id.IndexPageBtn);
+        AddrSettingPageBtn = (LinearLayout)findViewById(R.id.addr_setbtn);
+        AdvicePageBtn = (LinearLayout)findViewById(R.id.advicebtn);
     }
 
 }

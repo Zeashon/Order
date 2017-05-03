@@ -49,8 +49,10 @@ public class AdviceActivity extends Activity {
 
                 if (title.length() == 0) {
                     Toast.makeText(AdviceActivity.this, "请填写标题。", Toast.LENGTH_LONG).show();
+                    return;
                 } else if (content.length() < 15) {
                     Toast.makeText(AdviceActivity.this, "内容不少于15字。", Toast.LENGTH_LONG).show();
+                    return;
                 }
                 //        get Time
                 SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMddHHmmss");
@@ -74,7 +76,7 @@ public class AdviceActivity extends Activity {
 
         advice_ok_btn = (Button) findViewById(R.id.advice_okBtn);
         advice_cancel_btn = (Button) findViewById(R.id.advice_cancelBtn);
-        advice_title_et = (EditText) findViewById(R.id.adice_title);
+        advice_title_et = (EditText) findViewById(R.id.advice_title);
         advice_content_et = (EditText) findViewById(R.id.advice_content);
     }
 

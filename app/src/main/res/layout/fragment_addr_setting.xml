@@ -39,9 +39,9 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:gravity="center"
             android:text="请确认您的出行信息。"
-            android:textColor="@color/black"
-            android:gravity="center"/>
+            android:textColor="@color/black" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -59,7 +59,7 @@
                 android:textSize="12dp" />
 
             <DatePicker
-                android:id="@+id/finishTime"
+                android:id="@+id/checkTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left|center_vertical"
@@ -72,12 +72,18 @@
             </DatePicker>
         </LinearLayout>
 
+        <View
+            android:id="@+id/spit_view1"
+            android:layout_width="match_parent"
+            android:layout_height="0.6dp"
+            android:layout_marginTop="10dp"
+            android:background="#d3e3e3" />
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:background="@color/common_color"
+            android:layout_marginTop="10dp"
             android:orientation="horizontal">
 
             <EditText
@@ -89,6 +95,7 @@
                 android:layout_weight="1"
                 android:background="#00ffffff"
                 android:hint="车次"
+                android:inputType="textCapWords|textCapSentences|textCapCharacters"
                 android:textColorHint="@color/edittext_hint_color" />
 
 
@@ -102,6 +109,7 @@
                 android:background="#00ffffff"
                 android:ems="1"
                 android:hint="车厢"
+                android:inputType="number"
                 android:textColorHint="@color/edittext_hint_color" />
 
             <EditText
@@ -114,24 +122,31 @@
                 android:background="#00ffffff"
                 android:ems="2"
                 android:hint="座位号"
+                android:inputType="textCapWords|textCapCharacters"
                 android:textColorHint="@color/edittext_hint_color" />
 
         </LinearLayout>
 
         <View
             android:id="@+id/spit_view2"
-            android:layout_width="290dp"
+            android:layout_width="match_parent"
             android:layout_height="0.6dp"
             android:layout_below="@+id/linearLayout"
-            android:layout_marginLeft="60dp"
             android:background="#d3e3e3" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:background="@color/common_color"
             android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/qrScaner"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_margin="10dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/icon_scan_black" />
 
             <Button
                 android:id="@+id/addr_okBtn"
@@ -146,16 +161,16 @@
                 android:textSize="22sp" />
 
             <!--<Button-->
-                <!--android:id="@+id/addr_cancelBtn"-->
-                <!--android:layout_width="0dp"-->
-                <!--android:layout_height="40dp"-->
-                <!--android:layout_gravity="top|center_horizontal"-->
-                <!--android:layout_margin="20dp"-->
-                <!--android:layout_weight="1"-->
-                <!--android:background="@drawable/shape_solid_border"-->
-                <!--android:text="跳过"-->
-                <!--android:textColor="@color/black"-->
-                <!--android:textSize="22sp" />-->
+            <!--android:id="@+id/addr_cancelBtn"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="40dp"-->
+            <!--android:layout_gravity="top|center_horizontal"-->
+            <!--android:layout_margin="20dp"-->
+            <!--android:layout_weight="1"-->
+            <!--android:background="@drawable/shape_solid_border"-->
+            <!--android:text="跳过"-->
+            <!--android:textColor="@color/black"-->
+            <!--android:textSize="22sp" />-->
 
         </LinearLayout>
 

@@ -2,6 +2,7 @@ package jne.com.post;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -51,6 +52,13 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //1、获取Preferences
+        SharedPreferences addrSetting = getSharedPreferences("addSetting", 0);
+        //2、取出数据
+        String name = addrSetting.getString("user","default");
+        String url = addrSetting.getString("time","default");
+
 
         ordersDao = new OrderDao(this);
         if (!ordersDao.isDataExist()) {
@@ -185,13 +193,12 @@ public class MainActivity extends Activity {
                 Log.i(TAG, "你点击了第" + position + "项条目");
             }
         });
-        qrScanBtn = (Button) findViewById(R.id.qrScaner);
+
         qrScanBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Log.i(TAG, "click to scan qrscan");
                 Intent intent = new Intent(MainActivity.this, MipcaActivityCapture.class);
-                //TODO deal with the result of scaner.
-//                startActivityForResult(intent, Bitmap.Config.MainToMipca);
+                // deal with the result of scaner in onActivityResult
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivityForResult(intent, SCANNIN_GREQUEST_CODE);
             }
@@ -199,6 +206,7 @@ public class MainActivity extends Activity {
 
     }
 
+//    回调处理扫描信息
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -226,6 +234,7 @@ public class MainActivity extends Activity {
         MainPageBtn = (Button) findViewById(R.id.IndexPageBtn);
         ShopPageBtn = (Button) findViewById(R.id.ShopPageBtn);
         viewPager = (ViewPager) findViewById(R.id.viewpager1);
+        qrScanBtn = (Button) findViewById(R.id.qrScaner);
     }
 
 }

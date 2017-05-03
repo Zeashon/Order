@@ -33,7 +33,7 @@
         android:layout_alignParentRight="true"
         android:layout_marginRight="6dip"
         android:layout_marginTop="5dip"
-        android:background="@drawable/icon_scan"
+        android:background="@drawable/icon_scan_white"
         android:visibility="gone"/>
 
 </RelativeLayout>
