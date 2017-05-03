@@ -2,6 +2,7 @@ package jne.com.post;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -21,15 +22,10 @@ public class NewPostActivity extends Activity {
 
     private String TAG = "NewPostActivity";
     private OrderDao ordersDao;
-    private List<Order> orderList;
-    private OrderListAdapter adapter;
     private Button ShopPageBtn;
-    private Button NewPostBtn;
     private Button MessagePageBtn;
     private Button PersonalPageBtn;
     private Button MainPageBtn;
-    private Button SearchBtn;
-    private EditText SearchEditText;
     private DatePicker FnishTimeDatePicker;
     private EditText FnishPlaceEditText;
     private EditText RemunerationEditorText;
@@ -46,6 +42,7 @@ public class NewPostActivity extends Activity {
         setContentView(R.layout.activity_newpost);
 
         initComponent();
+        autofillAddr();
 
         ordersDao = new OrderDao(this);
         if (!ordersDao.isDataExist()) {
@@ -164,12 +161,9 @@ public class NewPostActivity extends Activity {
     private void initComponent() {
 
         ShopPageBtn = (Button) findViewById(R.id.ShopPageBtn);
-        NewPostBtn = (Button) findViewById(R.id.NewPostPageBtn);
         MessagePageBtn = (Button) findViewById(R.id.messagePageBtn);
         PersonalPageBtn = (Button) findViewById(R.id.personPageBtn);
         MainPageBtn = (Button) findViewById(R.id.IndexPageBtn);
-        SearchBtn = (Button) findViewById(R.id.main_search_button);
-        SearchEditText = (EditText) findViewById(R.id.SearchEditText);
         FnishPlaceEditText = (EditText) findViewById(R.id.finishPlace);
         FinishStation = (EditText) findViewById(R.id.finishStation);
         FnishTimeDatePicker = (DatePicker) findViewById(R.id.finishTime);
@@ -180,8 +174,7 @@ public class NewPostActivity extends Activity {
         PublishTime = (TextView) findViewById(R.id.postItem_time);
         UserName = (EditText) findViewById(R.id.user_name);
 
-
-//        setTime
+//        set Now Time
         SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMddHHmmss");
         Date curDate = new Date(System.currentTimeMillis());//获取当前时间
         String str = formatter.format(curDate);
@@ -189,4 +182,26 @@ public class NewPostActivity extends Activity {
         PublishTime.setText(str);
     }
 
+    private void autofillAddr() {
+        //1、获取Preferences
+        SharedPreferences addrSetting = getSharedPreferences("addrSetting", 0);
+        //2、取出数据
+        String checked = addrSetting.getString("checked", "N");
+        if (checked.equals("Y")) {
+            String time = addrSetting.getString("time", "default");
+            String train = addrSetting.getString("train", "default");
+            String room = addrSetting.getString("room", "default");
+//          String seat = addrSetting.getString("seat", "default");
+            FnishPlaceEditText.setText(room + "车" + train);
+            String year, month, day;
+            year = time.substring(0, 4);
+            month = time.substring(4, 6);
+            day = time.substring(6, 8);
+            Log.e(TAG,year+":"+month+":"+day);
+            FnishTimeDatePicker.updateDate(Integer.parseInt(year), Integer.parseInt(month)-1, Integer.parseInt(day));
+        } else {
+            Toast.makeText(getApplicationContext(), "请手动输入交付信息", Toast.LENGTH_SHORT).show();
+        }
+
+    }
 }
