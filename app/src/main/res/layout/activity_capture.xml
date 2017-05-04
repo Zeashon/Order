@@ -21,7 +21,7 @@
         <include
             android:id="@+id/title_include"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_alignParentTop="true"
             layout="@layout/activity_title" />
     </RelativeLayout>

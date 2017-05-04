@@ -52,9 +52,8 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="25dp"
                 android:layout_weight="0.70"
-                android:autoText="false"
                 android:background="#00ffffff"
-                android:hint="手机号码" />
+                android:text="18659194849" />
 
         </LinearLayout>
 
@@ -85,7 +84,7 @@
                 android:layout_weight="0.70"
                 android:background="#00ffffff"
                 android:ems="10"
-                android:hint="密码"
+                android:text="123456"
                 android:inputType="textPassword" />
 
         </LinearLayout>
