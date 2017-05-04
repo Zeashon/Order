@@ -71,11 +71,16 @@ public class OrderDao {
             db.beginTransaction();
 
             db.execSQL("insert into " + OrderDBHelper.TABLE_NAME + " (Id, CustomName, PhoneNum, Country,FinishTime,FinishPlace,PostDetail,Remuneration,Type) values ('20160531191902', 'Zeashon', '18659595959', '南京站','20170604','03车D1237','希望有人能帮我带一下南京的咸水鸭，我1号会坐D1234次动车经过南京','新疆大枣400g',1)");
-            db.execSQL("insert into " + OrderDBHelper.TABLE_NAME + " (Id, CustomName, PhoneNum, Country,FinishTime,FinishPlace,PostDetail,Remuneration,Type) values ('20160531193423', 'Bor', '18659595959', '南京站','20170101','03车D1234','希望有人能帮我带一下南京的咸水鸭，我1号会坐D1234次动车经过南京','新疆大枣400g',0)");
-            db.execSQL("insert into " + OrderDBHelper.TABLE_NAME + " (Id, CustomName, PhoneNum, Country,FinishTime,FinishPlace,PostDetail,Remuneration,Type) values ('20160531191476', 'Cut', '18659595959', '南京站','20170603','03车D1237','希望有人能帮我带一下南京的咸水鸭，我1号会坐D1234次动车经过南京','新疆大枣400g',0)");
-            db.execSQL("insert into " + OrderDBHelper.TABLE_NAME + " (Id, CustomName, PhoneNum, Country,FinishTime,FinishPlace,PostDetail,Remuneration,Type) values ('20160133414455', 'Bor', '18659595959', '南京站','20170604','03车D1235','希望有人能帮我带一下南京的咸水鸭，我1号会坐D1234次动车经过南京','新疆大枣400g',0)");
-            db.execSQL("insert into " + OrderDBHelper.TABLE_NAME + " (Id, CustomName, PhoneNum, Country,FinishTime,FinishPlace,PostDetail,Remuneration,Type) values ('20160531191905', 'Arc', '18659595959', '南京站','20170601','03车D1235','希望有人能帮我带一下南京的咸水鸭，我1号会坐D1234次动车经过南京','新疆大枣400g',0)");
-            db.execSQL("insert into " + OrderDBHelper.TABLE_NAME + " (Id, CustomName, PhoneNum, Country,FinishTime,FinishPlace,PostDetail,Remuneration,Type) values ('20160531431902', 'Doom', '18659595959', '南京站','20170604','03车D1237','希望有人能帮我带一下南京的咸水鸭，我1号会坐D1234次动车经过南京','新疆大枣400g',0)");
+            db.execSQL("insert into " + OrderDBHelper.TABLE_NAME + " (Id, CustomName, PhoneNum, Country,FinishTime,FinishPlace,PostDetail,Remuneration,Type) values ('20160531193423', 'Bor', '18659595959', '北京站','20170101','03车D1234','全聚德的烤鸭，我1号会坐D1234次动车经过北京','RMB10',0)");
+            db.execSQL("insert into " + OrderDBHelper.TABLE_NAME + " (Id, CustomName, PhoneNum, Country,FinishTime,FinishPlace,PostDetail,Remuneration,Type) values ('20160531191476', 'Cut', '18659595959', '福州站','20170603','03车D1237','约狼人杀，在03车厢','无',0)");
+            db.execSQL("insert into " + OrderDBHelper.TABLE_NAME + " (Id, CustomName, PhoneNum, Country,FinishTime,FinishPlace,PostDetail,Remuneration,Type) values ('20160133414455', 'Bor', '18659595959', '杭州站','20170604','03车D1235','我有一些土特产，感兴趣可以来03车厢','无',0)");
+            db.execSQL("insert into " + OrderDBHelper.TABLE_NAME + " (Id, CustomName, PhoneNum, Country,FinishTime,FinishPlace,PostDetail,Remuneration,Type) values ('20160531191905', 'Arc', '18659595959', '抚州站','20170601','03车D1235','高档泸州老窖酒换等价值物品，铁壳，红瓷瓶，52°，带礼盒包装','298元',0)");
+            db.execSQL("insert into " + OrderDBHelper.TABLE_NAME + " (Id, CustomName, PhoneNum, Country,FinishTime,FinishPlace,PostDetail,Remuneration,Type) values ('20170531431902', 'Doom', '18659595959', '西安站','20170604','03车D1237','天福茗茶 白毫银针','700',0)");
+            db.execSQL("insert into " + OrderDBHelper.TABLE_NAME + " (Id, CustomName, PhoneNum, Country,FinishTime,FinishPlace,PostDetail,Remuneration,Type) values ('20170531191907', 'Kate', '18659595959', '上海站','20170604','04车D1237','山东烟台大樱桃,特级品种,口感不好免费退货 - 150元','150元',0)");
+            db.execSQL("insert into " + OrderDBHelper.TABLE_NAME + " (Id, CustomName, PhoneNum, Country,FinishTime,FinishPlace,PostDetail,Remuneration,Type) values ('20170531191906', 'Mike', '18659595959', '南昌站','20170604','05车D1237','低价转让个大黑枸杞,一斤300元,可小刀','300元',0)");
+            db.execSQL("insert into " + OrderDBHelper.TABLE_NAME + " (Id, CustomName, PhoneNum, Country,FinishTime,FinishPlace,PostDetail,Remuneration,Type) values ('20170531191905', 'Lucy', '18659595959', '无锡站','20170604','06车D1237','希望有人能帮我带一下南京的咸水鸭，我1号会坐D1237次动车经过南京','新疆大枣400g',0)");
+            db.execSQL("insert into " + OrderDBHelper.TABLE_NAME + " (Id, CustomName, PhoneNum, Country,FinishTime,FinishPlace,PostDetail,Remuneration,Type) values ('20170531191904', 'Kitty', '18659595959', '福州站','20170604','07车D1237','经过福州想试试福州鱼丸，福州上车的朋友可否帮忙带一下哈','5',0)");
+            db.execSQL("insert into " + OrderDBHelper.TABLE_NAME + " (Id, CustomName, PhoneNum, Country,FinishTime,FinishPlace,PostDetail,Remuneration,Type) values ('20170531191903', 'Webster', '18659595959', '太原站','20170604','08车D1237','转让华为P10plus128G黑色','4500',0)");
 
             db.setTransactionSuccessful();
         } catch (Exception e) {
@@ -385,17 +390,17 @@ public class OrderDao {
     }
 
     //    查询准确车次（格式：03车D1234）&& 时间 （2016.06.01）
-    public List<Order> getAccurateOrder(String keyWord) {
+    public List<Order> getTrainOrder(String keyWord) {
         SQLiteDatabase db = null;
         Cursor cursor = null;
         String[] str = keyWord.split("&");
-        Log.e(TAG , "FinishPlace = "+str[0]+" and FinishTime =  "+str[1]);
+        Log.e(TAG , "FinishPlace = "+str[1]+" and FinishTime LIKE  "+str[0]);
         try {
             db = ordersDBHelper.getReadableDatabase();
             cursor = db.query(OrderDBHelper.TABLE_NAME,
                     ORDER_COLUMNS,
-                    "FinishPlace = ? and FinishTime = ?",
-                    new String[]{str[1], str[0]},
+                    "FinishPlace LIKE ? and FinishTime = ?",
+                    new String[]{"%"+str[1]+"%", str[0]},
                     null, null, null);
             Log.e(TAG,String.valueOf(cursor.getCount()));
             if (cursor.getCount() > 0) {

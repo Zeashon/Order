@@ -268,7 +268,7 @@ public class MainActivity extends Activity {
             String train = addrSetting.getString("train", "default");
             String room = addrSetting.getString("room", "default");
             String seat = addrSetting.getString("seat", "default");
-            orderList = ordersDao.getAccurateOrder(time + "&" + room + "车" + train);
+            orderList = ordersDao.getTrainOrder(time + "&"  + train);
         } else {
             orderList = ordersDao.getAllDate();
         }
