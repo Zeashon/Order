@@ -274,10 +274,11 @@ public class MipcaActivityCapture extends Activity implements Callback, View.OnC
         Intent resultIntent = new Intent();
         Log.i(TAG, "MipcaActivityCapture-resultString" + resultString);
 //        resultString 即为获取到的结果   Zeashon
-//		res example: easygo & addr & 20170604 & D1237 & 03 & 12D
+//		res example: easygo & 南京 & 20170604 & D1237 & 03 & 12D
         String res[] = resultString.split("&");
-        String checked = "N", time, train, room, seat;
-        if (res[0].equals("easygo") && res[1].equals("addr")) {
+        String checked = "N", time, train, room, seat,city;
+        city = res[1];
+        if (res[0].equals("easygo") ) {
             try {
                 time = res[2];
                 train = res[3];
@@ -287,6 +288,7 @@ public class MipcaActivityCapture extends Activity implements Callback, View.OnC
                 bundle.putString("train", train);
                 bundle.putString("room", room);
                 bundle.putString("seat", seat);
+                bundle.putString("city",city);
                 checked = "Y";
             } catch (Exception e) {
                 Log.i(TAG, "扫描定位 fail");

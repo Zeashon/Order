@@ -274,6 +274,81 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="70dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/theme_blue"
+            android:orientation="horizontal"
+            android:weightSum="15">
+
+            <LinearLayout
+                android:id="@+id/trainStateQuerybtn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/common_color"
+                android:clickable="true">
+
+                <LinearLayout
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/icon_query"></LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:text="列车正晚点查询"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <View
+                            android:layout_width="fill_parent"
+                            android:layout_height="0.6dp"
+                            android:background="@color/view_grey" />
+
+                        <TextView
+                            android:id="@+id/trainState"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="5dp"
+                            android:text="列车正晚点结果"
+                            android:textColor="@color/green"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <Button
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/icon_right"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:textColor="@color/black" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
     </LinearLayout>
 
 

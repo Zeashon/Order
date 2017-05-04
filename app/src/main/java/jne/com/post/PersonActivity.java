@@ -32,6 +32,7 @@ public class PersonActivity extends Activity {
     private TextView PostNumTextView;
     private LinearLayout AddrSettingPageBtn;
     private LinearLayout AdvicePageBtn;
+    private LinearLayout TrainStateQueryBtn;
 
     public PersonActivity() {
     }
@@ -92,6 +93,13 @@ public class PersonActivity extends Activity {
                 startActivity(intent);
             }
         });
+        TrainStateQueryBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String APIKey = "398eaa944646cfe6";
+                //TODO train state query
+            }
+        });
     }
 
 
@@ -103,6 +111,7 @@ public class PersonActivity extends Activity {
         MainPageBtn = (Button) findViewById(R.id.IndexPageBtn);
         AddrSettingPageBtn = (LinearLayout)findViewById(R.id.addr_setbtn);
         AdvicePageBtn = (LinearLayout)findViewById(R.id.advicebtn);
+        TrainStateQueryBtn = (LinearLayout) findViewById(R.id.trainStateQuerybtn);
     }
 
 }
