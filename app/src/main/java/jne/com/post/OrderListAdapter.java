@@ -104,12 +104,17 @@ public class OrderListAdapter extends BaseAdapter {
             public void onClick(View v) {
                 Log.e(TAG, "点击" + id);
                 ordersDao.addPost(id, tag);
-                if (2 - tag == 2) {
+                if (2 - tag == 0) {
                     Log.e(TAG, "取消收藏了帖子" + id + "。");
+                    Toast.makeText(context, "取消收藏了帖子"+ id, Toast.LENGTH_SHORT).show();
                     oholder.addCollection.setBackgroundResource(R.drawable.icon_like_empty);
                 } else if (2 - tag == 2) {
                     Log.e(TAG, "收藏了帖子" + id + "。");
                     oholder.addCollection.setBackgroundResource(R.drawable.icon_like_filled);
+                    Toast.makeText(context, id +"帖子已收藏", Toast.LENGTH_SHORT).show();
+                }else if (2 - tag == 1) {
+                    Log.e(TAG, "这是你的帖子" + id + "。");
+                    Toast.makeText(context, id +"这是你的帖子", Toast.LENGTH_SHORT).show();
                 }
             }
         });

@@ -49,51 +49,62 @@
         <activity
             android:name="jne.com.post.SearchActivity"
             android:screenOrientation="portrait"
+            android:launchMode="singleTask"
             android:windowSoftInputMode="stateVisible|adjustPan"></activity>
 
 
         <activity
             android:name="jne.com.qr_codescan.MipcaActivityCapture"
+            android:launchMode="singleTask"
             android:screenOrientation="portrait"></activity>
 
         <activity
             android:name="jne.com.post.ShoppingCartActivity"
             android:screenOrientation="portrait"
+            android:launchMode="singleTask"
             android:windowSoftInputMode="adjustPan"></activity>
         <activity
             android:name="jne.com.post.NewPostActivity"
             android:screenOrientation="portrait"
+            android:launchMode="singleTask"
             android:windowSoftInputMode="stateVisible|adjustPan"></activity>
         <activity
             android:name="jne.com.post.PersonActivity"
             android:screenOrientation="portrait"
+            android:launchMode="singleTask"
             android:windowSoftInputMode="adjustPan"></activity>
         <activity
             android:name="jne.com.post.MyPostActivity"
             android:screenOrientation="portrait"
+            android:launchMode="singleTask"
             android:windowSoftInputMode="adjustPan"></activity>
         <activity
             android:name="jne.com.post.PromotionActivity"
             android:screenOrientation="portrait"
+            android:launchMode="singleTask"
             android:windowSoftInputMode="adjustPan"></activity>
         <activity
             android:name="jne.com.post.NearbyActivity"
             android:screenOrientation="portrait"
+            android:launchMode="singleTask"
             android:windowSoftInputMode="adjustPan"></activity>
 
         <activity
             android:name="jne.com.post.CollectionActivity"
             android:screenOrientation="portrait"
+            android:launchMode="singleTask"
             android:windowSoftInputMode="adjustPan"></activity>
 
         <activity
             android:name="jne.com.post.AdviceActivity"
             android:screenOrientation="portrait"
+            android:launchMode="singleTask"
             android:windowSoftInputMode="adjustPan"></activity>
 
         <activity
             android:name="jne.com.post.AddrSettingActivity"
             android:screenOrientation="portrait"
+            android:launchMode="singleTask"
             android:windowSoftInputMode="adjustPan"></activity>
 
     </application>
