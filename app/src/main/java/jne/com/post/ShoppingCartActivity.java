@@ -6,6 +6,7 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.util.SparseArray;
 import android.util.SparseIntArray;
 import android.view.LayoutInflater;
@@ -30,12 +31,14 @@ import com.flipboard.bottomsheet.BottomSheetLayout;
 
 import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.List;
 
 import jne.com.R;
 import se.emilsjolander.stickylistheaders.StickyListHeadersListView;
 
 public class ShoppingCartActivity extends AppCompatActivity implements View.OnClickListener {
 
+    private static final String TAG = "zeashon";
     private ImageView imgCart;
     private ViewGroup anim_mask_layout;
     private RecyclerView rvType, rvSelected;
@@ -81,7 +84,7 @@ public class ShoppingCartActivity extends AppCompatActivity implements View.OnCl
         tvCount = (TextView) findViewById(R.id.tvCount);
         tvCost = (TextView) findViewById(R.id.tvCost);
         tvTips = (TextView) findViewById(R.id.tvTips);
-        tvTips.setText("￥ "+ minfee +"元起送");
+        tvTips.setText("￥ " + minfee + "元起送");
         tvSubmit = (TextView) findViewById(R.id.tvSubmit);
         rvType = (RecyclerView) findViewById(R.id.typeRecyclerView);
         BTMainbtn = (Button) findViewById(R.id.back_to_main);
@@ -202,9 +205,13 @@ public class ShoppingCartActivity extends AppCompatActivity implements View.OnCl
             case R.id.clear:
                 clearCart();
                 break;
-            case R.id.tvSubmit:
+            case R.id.tvSubmit: {
+                Intent intent = getFullProductInfo();
+                intent.setClass(ShoppingCartActivity.this, OrderCheckActivity.class);
+                startActivity(intent);
                 Toast.makeText(ShoppingCartActivity.this, "结算", Toast.LENGTH_SHORT).show();
-                break;
+            }
+            break;
             default:
                 break;
         }
@@ -364,6 +371,43 @@ public class ShoppingCartActivity extends AppCompatActivity implements View.OnCl
             }
         }
     }
+
+    //    获取详细订单商品信息
+    private Intent getFullProductInfo() {
+        int size = selectedList.size();
+        int count = 0;
+        String cost = "";
+        Bundle bundle = new Bundle();
+        Intent orderInfoIntent = new Intent();
+        try {
+            count = Integer.valueOf(tvCount.getText().toString());
+            cost = tvCost.getText().toString();
+        } catch (Exception e) {
+            count = 0;
+            cost = "0";
+        }
+        bundle.putInt("size", count);
+        bundle.putString("cost", cost);
+        List<Integer> eachCount = new ArrayList<Integer>();
+//        List<Double> eachCost =  new ArrayList<Double>();
+        double eachPrice[] = new double[size + 1];
+        List<String> eachName = new ArrayList<String>();
+        for (int i = 0; i < size; i++) {
+            GoodsItem item = selectedList.valueAt(i);
+            eachCount.add(i, item.count);
+//            eachCost.add(i,item.count * item.price);
+            eachPrice[i] = item.price;
+            eachName.add(i, item.name);
+        }
+        bundle.putIntegerArrayList("eachCount", (ArrayList<Integer>) eachCount);
+        bundle.putDoubleArray("eachPrice", eachPrice);
+        bundle.putStringArrayList("eachName", (ArrayList<String>) eachName);
+        orderInfoIntent.putExtras(bundle);
+
+        Log.e(TAG, "ShoppingCartActivity: list.size = " + bundle.getInt("size", 0));
+        return orderInfoIntent;
+    }
+
 
     @Override
     public void onBackPressed() {

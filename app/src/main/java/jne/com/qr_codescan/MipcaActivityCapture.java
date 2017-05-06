@@ -295,26 +295,6 @@ public class MipcaActivityCapture extends Activity implements Callback, View.OnC
                 e.printStackTrace();
             }
         }
-//		double sx,sy;int sz;
-//		try{
-//			sx= Double.parseDouble(xyz[0]);
-//			sy= Double.parseDouble(xyz[1]);
-//			sz= Integer.parseInt(xyz[2]);
-//			if(0<=sz&&sz<=2&&sx<=1.0&&sy<=1.0&&sx>=0.0&&sy>=0.0){
-//				synchronized (stepLocation.lastAMapPoint){
-//					stepLocation.lastAMapPoint.setZ(sz);
-//					stepLocation.lastAMapPoint.setX(sx);
-//					stepLocation.lastAMapPoint.setY(sy);
-//					stepLocation.lastAMapPoint.setStep(stepLocation.lastAMapPoint.getStep()+2);
-//					Log.i(TAG,"synchronized (stepLocation.lastAMapPoint) success");
-//				}
-//			}
-//		}
-//		catch(Exception e){
-//			Log.i(TAG,"扫描定位 fail");
-//			e.printStackTrace();
-//		}
-//		this.setResult(RESULT_OK, resultIntent);
 
         bundle.putString("result", resultString);
         bundle.putString("checked", checked);
