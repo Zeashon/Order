@@ -125,6 +125,7 @@ public class MainActivity extends Activity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, SearchActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -133,6 +134,7 @@ public class MainActivity extends Activity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, NewPostActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -141,6 +143,7 @@ public class MainActivity extends Activity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, MainActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
         PersonalPageBtn.setOnClickListener(new View.OnClickListener() {
@@ -148,6 +151,7 @@ public class MainActivity extends Activity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, PersonActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
         MessagePageBtn.setOnClickListener(new View.OnClickListener() {
@@ -155,6 +159,7 @@ public class MainActivity extends Activity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, CollectionActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
         ShopPageBtn.setOnClickListener(new View.OnClickListener() {
@@ -162,6 +167,7 @@ public class MainActivity extends Activity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ShoppingCartActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
         PromotionPageBtn.setOnClickListener(new View.OnClickListener() {
@@ -169,6 +175,7 @@ public class MainActivity extends Activity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, PromotionActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
         showPostListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

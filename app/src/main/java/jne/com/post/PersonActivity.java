@@ -17,19 +17,11 @@ import jne.com.R;
 
 public class PersonActivity extends Activity {
 
-    private OrderDao ordersDao;
-    private ListView showPostListView;
-    private List<Order> orderList;
-    private OrderListAdapter adapter;
     private Button ShopPageBtn;
     private Button NewPostBtn;
     private Button MessagePageBtn;
-    private Button PersonalPageBtn;
     private Button MainPageBtn;
     private LinearLayout MyPostBtn;
-    private Button SearchBtn;
-    private EditText SearchEditText;
-    private TextView PostNumTextView;
     private LinearLayout AddrSettingPageBtn;
     private LinearLayout AdvicePageBtn;
     private LinearLayout TrainStateQueryBtn;
@@ -49,6 +41,7 @@ public class PersonActivity extends Activity {
             public void onClick(View v) {
                 Intent intent = new Intent(PersonActivity.this, MainActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
         NewPostBtn.setOnClickListener(new View.OnClickListener() {
@@ -56,6 +49,7 @@ public class PersonActivity extends Activity {
             public void onClick(View v) {
                 Intent intent = new Intent(PersonActivity.this, NewPostActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
         ShopPageBtn.setOnClickListener(new View.OnClickListener() {
@@ -63,6 +57,7 @@ public class PersonActivity extends Activity {
             public void onClick(View v) {
                 Intent intent = new Intent(PersonActivity.this, ShoppingCartActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
         MessagePageBtn.setOnClickListener(new View.OnClickListener() {
@@ -70,6 +65,7 @@ public class PersonActivity extends Activity {
             public void onClick(View v) {
                 Intent intent = new Intent(PersonActivity.this, CollectionActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
         MyPostBtn.setOnClickListener(new View.OnClickListener() {
@@ -77,6 +73,7 @@ public class PersonActivity extends Activity {
             public void onClick(View v) {
                 Intent intent = new Intent(PersonActivity.this, MyPostActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
         AddrSettingPageBtn.setOnClickListener(new View.OnClickListener() {
@@ -112,6 +109,14 @@ public class PersonActivity extends Activity {
         AddrSettingPageBtn = (LinearLayout)findViewById(R.id.addr_setbtn);
         AdvicePageBtn = (LinearLayout)findViewById(R.id.advicebtn);
         TrainStateQueryBtn = (LinearLayout) findViewById(R.id.trainStateQuerybtn);
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(PersonActivity.this, MainActivity.class);
+        startActivity(intent);
+        super.onBackPressed();
+        finish();
     }
 
 }

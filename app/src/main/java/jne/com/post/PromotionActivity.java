@@ -15,18 +15,10 @@ import jne.com.R;
 
 public class PromotionActivity extends Activity {
 
-    private OrderDao ordersDao;
-    private ListView showPostListView;
-    private List<Order> orderList;
-    private OrderListAdapter adapter;
     private Button ShopPageBtn;
     private Button NewPostBtn;
     private Button MessagePageBtn;
-    private Button PersonalPageBtn;
     private Button MainPageBtn;
-    private Button SearchBtn;
-    private EditText SearchEditText;
-    private TextView PostNumTextView;
 
     public PromotionActivity() {
     }
@@ -43,6 +35,7 @@ public class PromotionActivity extends Activity {
             public void onClick(View v) {
                 Intent intent = new Intent(PromotionActivity.this, MainActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
         NewPostBtn.setOnClickListener(new View.OnClickListener() {
@@ -50,6 +43,7 @@ public class PromotionActivity extends Activity {
             public void onClick(View v) {
                 Intent intent = new Intent(PromotionActivity.this, NewPostActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
         ShopPageBtn.setOnClickListener(new View.OnClickListener() {
@@ -57,6 +51,7 @@ public class PromotionActivity extends Activity {
             public void onClick(View v) {
                 Intent intent = new Intent(PromotionActivity.this, NearbyActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
         MessagePageBtn.setOnClickListener(new View.OnClickListener() {
@@ -64,6 +59,7 @@ public class PromotionActivity extends Activity {
             public void onClick(View v) {
                 Intent intent = new Intent(PromotionActivity.this, CollectionActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
     }
@@ -74,6 +70,14 @@ public class PromotionActivity extends Activity {
         NewPostBtn = (Button) findViewById(R.id.NewPostPageBtn);
         MessagePageBtn = (Button) findViewById(R.id.messagePageBtn);
         MainPageBtn = (Button) findViewById(R.id.IndexPageBtn);
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(PromotionActivity.this, MainActivity.class);
+        startActivity(intent);
+        super.onBackPressed();
+        finish();
     }
 
 }

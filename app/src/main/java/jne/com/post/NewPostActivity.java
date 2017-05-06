@@ -55,6 +55,7 @@ public class NewPostActivity extends Activity {
             public void onClick(View v) {
                 Intent intent = new Intent(NewPostActivity.this, MainActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
         ShopPageBtn.setOnClickListener(new View.OnClickListener() {
@@ -62,6 +63,7 @@ public class NewPostActivity extends Activity {
             public void onClick(View v) {
                 Intent intent = new Intent(NewPostActivity.this, ShoppingCartActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
         PersonalPageBtn.setOnClickListener(new View.OnClickListener() {
@@ -69,6 +71,7 @@ public class NewPostActivity extends Activity {
             public void onClick(View v) {
                 Intent intent = new Intent(NewPostActivity.this, PersonActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
         MessagePageBtn.setOnClickListener(new View.OnClickListener() {
@@ -76,6 +79,7 @@ public class NewPostActivity extends Activity {
             public void onClick(View v) {
                 Intent intent = new Intent(NewPostActivity.this, CollectionActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -203,5 +207,13 @@ public class NewPostActivity extends Activity {
             Toast.makeText(getApplicationContext(), "请手动输入交付信息", Toast.LENGTH_SHORT).show();
         }
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(NewPostActivity.this, MainActivity.class);
+        startActivity(intent);
+        super.onBackPressed();
+        finish();
     }
 }

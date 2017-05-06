@@ -122,6 +122,7 @@ public class ShoppingCartActivity extends AppCompatActivity implements View.OnCl
             public void onClick(View v) {
                 Intent intent = new Intent(ShoppingCartActivity.this, MainActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
     }
@@ -363,4 +364,13 @@ public class ShoppingCartActivity extends AppCompatActivity implements View.OnCl
             }
         }
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(ShoppingCartActivity.this, MainActivity.class);
+        startActivity(intent);
+        super.onBackPressed();
+        finish();
+    }
+
 }

@@ -50,6 +50,7 @@ public class SearchActivity extends Activity {
             public void onClick(View v) {
                 Intent intent = new Intent(SearchActivity.this, MainActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
         NewPostBtn.setOnClickListener(new View.OnClickListener() {
@@ -57,6 +58,7 @@ public class SearchActivity extends Activity {
             public void onClick(View v) {
                 Intent intent = new Intent(SearchActivity.this, NewPostActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
         PersonalPageBtn.setOnClickListener(new View.OnClickListener() {
@@ -64,6 +66,7 @@ public class SearchActivity extends Activity {
             public void onClick(View v) {
                 Intent intent = new Intent(SearchActivity.this, PersonActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
         ShopPageBtn.setOnClickListener(new View.OnClickListener() {
@@ -71,6 +74,7 @@ public class SearchActivity extends Activity {
             public void onClick(View v) {
                 Intent intent = new Intent(SearchActivity.this, ShoppingCartActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
         MessagePageBtn.setOnClickListener(new View.OnClickListener() {
@@ -78,6 +82,7 @@ public class SearchActivity extends Activity {
             public void onClick(View v) {
                 Intent intent = new Intent(SearchActivity.this, CollectionActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -115,6 +120,14 @@ public class SearchActivity extends Activity {
         MainPageBtn = (Button) findViewById(R.id.IndexPageBtn);
         SearchBtn = (Button) findViewById(R.id.main_search_button);
         SearchEditText = (EditText) findViewById(R.id.SearchEditText);
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(SearchActivity.this, MainActivity.class);
+        startActivity(intent);
+        super.onBackPressed();
+        finish();
     }
 
 }
