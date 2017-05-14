@@ -11,6 +11,9 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
+import java.net.URL;
 import java.util.List;
 
 import jne.com.R;
@@ -118,5 +121,26 @@ public class PersonActivity extends Activity {
         super.onBackPressed();
         finish();
     }
+
+
+    public void getTrainState(String path[]) throws Exception {
+        URL u=new URL("http://route.showapi.com/832-4?showapi_appid=myappid&train_num=&showapi_sign=mysecret");
+        InputStream in=u.openStream();
+        ByteArrayOutputStream out=new ByteArrayOutputStream();
+        try {
+            byte buf[]=new byte[1024];
+            int read = 0;
+            while ((read = in.read(buf)) > 0) {
+                out.write(buf, 0, read);
+            }
+        }  finally {
+            if (in != null) {
+                in.close();
+            }
+        }
+        byte b[]=out.toByteArray( );
+        System.out.println(new String(b,"utf-8"));
+    }
+
 
 }
