@@ -2,6 +2,7 @@ package jne.com.post;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -24,9 +25,9 @@ public class MyPostActivity extends Activity {
     private Button MessagePageBtn;
     private Button PersonalPageBtn;
     private Button MainPageBtn;
-    private Button SearchBtn;
-    private EditText SearchEditText;
     private TextView PostNumTextView;
+    private Button showFinishedPostBtn;
+    private Button showDoingPostBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,14 +42,16 @@ public class MyPostActivity extends Activity {
         initComponent();
 
         int resNum=0;
-        orderList = ordersDao.getTypePost(1);
+        //获取未完成的任务
+        orderList=ordersDao.getTypePost(1);
+        resNum = orderList.size();
         if (orderList != null){
             adapter = new OrderListAdapter(this, orderList);
             showPostListView.setAdapter(adapter);
             resNum = adapter.getCount();
         }
-        if(resNum>0)
-        {   PostNumTextView.setText("你已发布" + resNum + "条任务");   }
+        if(resNum > 0)
+        {   PostNumTextView.setText("你共有" + resNum + "条未完成任务");   }
         else
         {   PostNumTextView.setText("你一条任务都没发布，快去发布任务吧");    }
 
@@ -81,6 +84,44 @@ public class MyPostActivity extends Activity {
                 startActivity(intent);
             }
         });
+        showDoingPostBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDoingPostBtn.setBackgroundColor(0xff17abe3);
+                showFinishedPostBtn.setBackgroundColor(Color.WHITE);
+                orderList=ordersDao.getTypePost(1);
+                int resNum = 0;
+                if (orderList != null){
+                    adapter = new OrderListAdapter(MyPostActivity.this, orderList);
+                    showPostListView.setAdapter(adapter);
+                    resNum = adapter.getCount();
+                }
+                if(resNum > 0)
+                {   PostNumTextView.setText("你共有" + resNum + "条未完成任务");   }
+                else
+                {   PostNumTextView.setText("你一条任务都没发布，快去发布任务吧");    }
+
+            }
+        });
+        showFinishedPostBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDoingPostBtn.setBackgroundColor(Color.WHITE);
+                showFinishedPostBtn.setBackgroundColor(0xff17abe3);
+                orderList=ordersDao.getTypePost(3);
+                int resNum = 0;
+                if (orderList != null){
+                    adapter = new OrderListAdapter(MyPostActivity.this, orderList);
+                    showPostListView.setAdapter(adapter);
+                    resNum = adapter.getCount();
+                }
+                if(resNum > 0)
+                {   PostNumTextView.setText("你共有" + resNum + "条已完成任务");   }
+                else
+                {   PostNumTextView.setText("你一条任务都没发布，快去发布任务吧");    }
+
+            }
+        });
 
     }
 
@@ -94,6 +135,17 @@ public class MyPostActivity extends Activity {
         PersonalPageBtn = (Button) findViewById(R.id.personPageBtn);
         MainPageBtn = (Button) findViewById(R.id.IndexPageBtn);
         PostNumTextView = (TextView) findViewById(R.id.PostNumTextView);
+        showDoingPostBtn = (Button) findViewById(R.id.showDoingPost);
+        showFinishedPostBtn = (Button) findViewById(R.id.showFinishedPost);
+
+        showDoingPostBtn.setBackgroundColor(0xff17abe3);
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(MyPostActivity.this, PersonActivity.class);
+        startActivity(intent);
+        super.onBackPressed();
+        finish();
+    }
 }

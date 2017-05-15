@@ -26,7 +26,7 @@ public class Order {
     public String finishPlace;// 03车D1234
     public String postDetail;// 需求
     public String remuneration;//诱惑
-    public int type;//1：自己的帖子  0：未标记  2：收藏的帖子
+    public int type;//1&3：自己的帖子,未完成&已完成  0：未标记  4：收藏的帖子
 
     public Order() {
     }

@@ -127,10 +127,9 @@ public class OrderDao {
     public List<Order> getAllDate() {
         SQLiteDatabase db = null;
         Cursor cursor = null;
-
         try {
             db = ordersDBHelper.getReadableDatabase();
-            // select * from Orders
+            // select * from table
             SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd");
             Date curDate = new Date(System.currentTimeMillis());//获取当前时间
             String str = formatter.format(curDate);
@@ -138,7 +137,7 @@ public class OrderDao {
             cursor = db.query(OrderDBHelper.TABLE_NAME, ORDER_COLUMNS,
                     "FinishTime > ?",
                     new String[]{str},
-                    null, null, "Id DESC");//降序拍列
+                    null, null, "Id DESC");//降序排列
 
             if (cursor.getCount() > 0) {
                 List<Order> orderList = new ArrayList<Order>(cursor.getCount());
@@ -178,7 +177,6 @@ public class OrderDao {
             contentValues.put("OrderPrice", 700);
             contentValues.put("Country", "China");
             db.insertOrThrow(OrderDBHelper.TABLE_NAME, null, contentValues);
-
             db.setTransactionSuccessful();
             return true;
         } catch (SQLiteConstraintException e) {
@@ -389,20 +387,20 @@ public class OrderDao {
         return null;
     }
 
-    //    查询准确车次（格式：03车D1234）&& 时间 （2016.06.01）
+    //    模糊查询车次（格式：03车D1234）&& 精准时间 （2016.06.01）
     public List<Order> getTrainOrder(String keyWord) {
         SQLiteDatabase db = null;
         Cursor cursor = null;
         String[] str = keyWord.split("&");
-        Log.e(TAG , "FinishPlace = "+str[1]+" and FinishTime LIKE  "+str[0]);
+        Log.e(TAG, "FinishPlace LIKE  " + str[1] + " and FinishTime=  " + str[0]);
         try {
             db = ordersDBHelper.getReadableDatabase();
             cursor = db.query(OrderDBHelper.TABLE_NAME,
                     ORDER_COLUMNS,
                     "FinishPlace LIKE ? and FinishTime = ?",
-                    new String[]{"%"+str[1]+"%", str[0]},
+                    new String[]{"%" + str[1] + "%", str[0]},
                     null, null, null);
-            Log.e(TAG,String.valueOf(cursor.getCount()));
+            Log.e(TAG, String.valueOf(cursor.getCount()));
             if (cursor.getCount() > 0) {
                 List<Order> orderList = new ArrayList<Order>(cursor.getCount());
                 while (cursor.moveToNext()) {
@@ -509,10 +507,9 @@ public class OrderDao {
         try {
             db = ordersDBHelper.getWritableDatabase();
             db.beginTransaction();
-
-            // update Orders set Type = 2 where Id = id
+            // update Orders set Type = 1 where Id = id
             ContentValues cv = new ContentValues();
-            cv.put("Type", (2 - type));
+            cv.put("Type", (4 - type));
             db.update(OrderDBHelper.TABLE_NAME,
                     cv,
                     "Id = ?",

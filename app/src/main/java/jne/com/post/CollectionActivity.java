@@ -39,7 +39,7 @@ public class CollectionActivity extends Activity {
         initComponent();
 
         int resNum = 0;
-        orderList = ordersDao.getTypePost(2);
+        ordersDao.getTypePost(2);
         if (orderList != null) {
             adapter = new OrderListAdapter(this, orderList);
             showPostListView.setAdapter(adapter);

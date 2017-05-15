@@ -95,7 +95,7 @@ public class SearchActivity extends Activity {
                     Toast.makeText(getApplicationContext(), "查询不能为空", Toast.LENGTH_SHORT).show();
                 } else {
                     int resNum;
-                    orderList = ordersDao.getPlaceTimeOrder(keyWord);
+                    orderList = ordersDao.getTrainOrder(keyWord);
                     if (orderList != null) {
                         adapter = new OrderListAdapter(getApplicationContext(), orderList);
                         resNum = adapter.getCount();
