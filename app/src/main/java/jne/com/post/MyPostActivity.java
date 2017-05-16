@@ -44,7 +44,6 @@ public class MyPostActivity extends Activity {
         int resNum=0;
         //获取未完成的任务
         orderList=ordersDao.getTypePost(1);
-        resNum = orderList.size();
         if (orderList != null){
             adapter = new OrderListAdapter(this, orderList);
             showPostListView.setAdapter(adapter);

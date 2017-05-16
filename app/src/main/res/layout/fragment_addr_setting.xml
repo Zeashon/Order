@@ -133,6 +133,62 @@
             android:layout_height="0.6dp"
             android:layout_below="@+id/linearLayout"
             android:background="#d3e3e3" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|left"
+                android:gravity="center_vertical|left"
+                android:layout_margin="10dp"
+                android:text="乘车站："
+                android:textColor="@color/black"
+                android:textSize="12dp" />
+            <EditText
+                android:id="@+id/startCity"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="#00ffffff"
+                android:hint="乘车站"
+                android:textColorHint="@color/edittext_hint_color" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|left"
+                android:gravity="center_vertical|left"
+                android:layout_margin="10dp"
+                android:text="到达站："
+                android:textColor="@color/black"
+                android:textSize="12dp" />
+            <EditText
+                android:id="@+id/finishCity"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="#00ffffff"
+                android:ems="1"
+                android:hint="到达站"
+                android:textColorHint="@color/edittext_hint_color" />
+
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/spit_view2"
+            android:layout_width="match_parent"
+            android:layout_height="0.6dp"
+            android:layout_below="@+id/linearLayout"
+            android:background="#d3e3e3" />
 
         <LinearLayout
             android:layout_width="match_parent"

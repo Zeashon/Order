@@ -28,6 +28,7 @@ public class PersonActivity extends Activity {
     private LinearLayout AddrSettingPageBtn;
     private LinearLayout AdvicePageBtn;
     private LinearLayout TrainStateQueryBtn;
+    private LinearLayout MyTicketPageBtn;
 
     public PersonActivity() {
     }
@@ -93,6 +94,13 @@ public class PersonActivity extends Activity {
                 startActivity(intent);
             }
         });
+        MyTicketPageBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PersonActivity.this, MyTicketActivity.class);
+                startActivity(intent);
+            }
+        });
         TrainStateQueryBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -112,6 +120,7 @@ public class PersonActivity extends Activity {
         AddrSettingPageBtn = (LinearLayout)findViewById(R.id.addr_setbtn);
         AdvicePageBtn = (LinearLayout)findViewById(R.id.advicebtn);
         TrainStateQueryBtn = (LinearLayout) findViewById(R.id.trainStateQuerybtn);
+        MyTicketPageBtn = (LinearLayout) findViewById(R.id.my_ticket_btn);
     }
 
     @Override

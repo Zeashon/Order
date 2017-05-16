@@ -276,19 +276,25 @@ public class MipcaActivityCapture extends Activity implements Callback, View.OnC
 //        resultString 即为获取到的结果   Zeashon
 //		res example: easygo & 南京 & 20170604 & D1237 & 03 & 12D
         String res[] = resultString.split("&");
-        String checked = "N", time, train, room, seat,city;
-        city = res[1];
+        String checked = "N", startcity,finishcity,date,time, train, room, seat,checkwindow;
         if (res[0].equals("easygo") ) {
             try {
-                time = res[2];
-                train = res[3];
-                room = res[4];
-                seat = res[5];
+                startcity = res[1];
+                finishcity = res[2];
+                date = res[3];
+                time = res[4];
+                train = res[5];
+                room = res[6];
+                seat = res[7];
+                checkwindow = res[8];
+                bundle.putString("startcity",startcity);
+                bundle.putString("finishcity",finishcity);
+                bundle.putString("date", date);
                 bundle.putString("time", time);
                 bundle.putString("train", train);
                 bundle.putString("room", room);
                 bundle.putString("seat", seat);
-                bundle.putString("city",city);
+                bundle.putString("checkwindow",checkwindow);
                 checked = "Y";
             } catch (Exception e) {
                 Log.i(TAG, "扫描定位 fail");

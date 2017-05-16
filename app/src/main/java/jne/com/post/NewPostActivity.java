@@ -192,15 +192,15 @@ public class NewPostActivity extends Activity {
         //2、取出数据
         String checked = addrSetting.getString("checked", "N");
         if (checked.equals("Y")) {
-            String time = addrSetting.getString("time", "default");
+            String date = addrSetting.getString("date", "default");
             String train = addrSetting.getString("train", "default");
             String room = addrSetting.getString("room", "default");
 //          String seat = addrSetting.getString("seat", "default");
             FnishPlaceEditText.setText(room + "车" + train);
             String year, month, day;
-            year = time.substring(0, 4);
-            month = time.substring(4, 6);
-            day = time.substring(6, 8);
+            year = date.substring(0, 4);
+            month = date.substring(4, 6);
+            day = date.substring(6, 8);
             Log.e(TAG,year+":"+month+":"+day);
             FnishTimeDatePicker.updateDate(Integer.parseInt(year), Integer.parseInt(month)-1, Integer.parseInt(day));
         } else {

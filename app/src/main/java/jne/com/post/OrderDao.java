@@ -71,7 +71,8 @@ public class OrderDao {
             db.beginTransaction();
 
             db.execSQL("insert into " + OrderDBHelper.TABLE_NAME + " (Id, CustomName, PhoneNum, Country,FinishTime,FinishPlace,PostDetail,Remuneration,Type) values ('20160531191902', 'Zeashon', '18659595959', '南京站','20170604','03车D1237','希望有人能帮我带一下南京的咸水鸭，我1号会坐D1234次动车经过南京','新疆大枣400g',1)");
-            db.execSQL("insert into " + OrderDBHelper.TABLE_NAME + " (Id, CustomName, PhoneNum, Country,FinishTime,FinishPlace,PostDetail,Remuneration,Type) values ('20160531193423', 'Bor', '18659595959', '北京站','20170101','03车D1234','全聚德的烤鸭，我1号会坐D1234次动车经过北京','RMB10',0)");
+            db.execSQL("insert into " + OrderDBHelper.TABLE_NAME + " (Id, CustomName, PhoneNum, Country,FinishTime,FinishPlace,PostDetail,Remuneration,Type) values ('20160531192002', 'Zeashon', '18659595959', '南京站','20170604','03车D1237','希望有人能帮我带一下南京的咸水鸭，我1号会坐D1234次动车经过南京','新疆大枣400g',3)");
+            db.execSQL("insert into " + OrderDBHelper.TABLE_NAME + " (Id, CustomName, PhoneNum, Country,FinishTime,FinishPlace,PostDetail,Remuneration,Type) values ('20160531193423', 'Bor', '18659595959', '北京站','20170101','03车D1234','全聚德的烤鸭，我1号会坐D1234次动车经过北京','RMB10',4)");
             db.execSQL("insert into " + OrderDBHelper.TABLE_NAME + " (Id, CustomName, PhoneNum, Country,FinishTime,FinishPlace,PostDetail,Remuneration,Type) values ('20160531191476', 'Cut', '18659595959', '福州站','20170603','03车D1237','约狼人杀，在03车厢','无',0)");
             db.execSQL("insert into " + OrderDBHelper.TABLE_NAME + " (Id, CustomName, PhoneNum, Country,FinishTime,FinishPlace,PostDetail,Remuneration,Type) values ('20160133414455', 'Bor', '18659595959', '杭州站','20170604','03车D1235','我有一些土特产，感兴趣可以来03车厢','无',0)");
             db.execSQL("insert into " + OrderDBHelper.TABLE_NAME + " (Id, CustomName, PhoneNum, Country,FinishTime,FinishPlace,PostDetail,Remuneration,Type) values ('20160531191905', 'Arc', '18659595959', '抚州站','20170601','03车D1235','高档泸州老窖酒换等价值物品，铁壳，红瓷瓶，52°，带礼盒包装','298元',0)");
@@ -462,24 +463,18 @@ public class OrderDao {
 //       查询我的帖子
 
     /**
-     * 查询数据库中所有数据
+     * 根据类型查询数据库中数据
      */
     public List<Order> getTypePost(int Type) {
         SQLiteDatabase db = null;
         Cursor cursor = null;
-
+        Log.e(TAG, "search for type = "+Type);
         try {
             db = ordersDBHelper.getReadableDatabase();
-            // select * from Orders
-            SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd");
-            Date curDate = new Date(System.currentTimeMillis());//获取当前时间
-            String str = formatter.format(curDate);
-            Log.e(TAG, str);
             cursor = db.query(OrderDBHelper.TABLE_NAME, ORDER_COLUMNS,
                     "Type = ?",
                     new String[]{Type + ""},
                     null, null, "Id DESC");//降序拍列
-
             if (cursor.getCount() > 0) {
                 List<Order> orderList = new ArrayList<Order>(cursor.getCount());
                 while (cursor.moveToNext()) {
@@ -497,7 +492,6 @@ public class OrderDao {
                 db.close();
             }
         }
-
         return null;
     }
 

@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
@@ -26,6 +27,9 @@ public class AddrSettingActivity extends Activity {
     private EditText no_of_seat_et;
     private DatePicker checkTime_dp;
     private Button qrScanBtn;
+    private TextView startCity;
+    private TextView finishCity;
+    String startcity,finishcity,date,time, train, room, seat,checkwindow;
 
     private final static int SCANNIN_GREQUEST_CODE = 1;
 
@@ -39,7 +43,8 @@ public class AddrSettingActivity extends Activity {
         addr_ok_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String train, room, seat, time;
+                startcity =startCity.getText().toString();
+                finishcity = finishCity.getText().toString();
                 train = no_of_train_et.getText().toString();
                 room = no_of_room_et.getText().toString();
                 seat = no_of_seat_et.getText().toString();
@@ -55,15 +60,15 @@ public class AddrSettingActivity extends Activity {
                 } else {
                     day = checkTime_dp.getDayOfMonth() + "";
                 }
-                time = checkTime_dp.getYear() + "" + month + day;
+                date = checkTime_dp.getYear() + "" + month + day;
 
-                Log.e(TAG, time);
-                //        get nowTime
+                Log.e(TAG, date);
+                //        get nowDate
                 SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMddHHmmss");
                 Date curDate = new Date(System.currentTimeMillis());//获取当前时间
-                String nowTime = formatter.format(curDate);
+                String nowDate = formatter.format(curDate);
 
-                if (time.compareTo(nowTime) < 0) {
+                if (date.compareTo(nowDate) < 0) {
                     Toast.makeText(AddrSettingActivity.this, "发车时间不可晚于今天。", Toast.LENGTH_LONG).show();
                     return;
                 } else if (train.length() == 0) {
@@ -73,6 +78,12 @@ public class AddrSettingActivity extends Activity {
                     Toast.makeText(AddrSettingActivity.this, "请填写车厢。", Toast.LENGTH_LONG).show();
                     return;
                 } else if (seat.length() == 0) {
+                    Toast.makeText(AddrSettingActivity.this, "请填写座位号。", Toast.LENGTH_LONG).show();
+                    return;
+                }else if (startcity.length() == 0) {
+                    Toast.makeText(AddrSettingActivity.this, "请填写座位号。", Toast.LENGTH_LONG).show();
+                    return;
+                }else if (finishcity.length() == 0) {
                     Toast.makeText(AddrSettingActivity.this, "请填写座位号。", Toast.LENGTH_LONG).show();
                     return;
                 }
@@ -88,10 +99,14 @@ public class AddrSettingActivity extends Activity {
                 //3、存放数据
                 editor.putString("checked", "Y");
                 editor.putString("user", user);
+                editor.putString("startcity",startcity);
+                editor.putString("finishcity",finishcity);
+                editor.putString("date", date);
                 editor.putString("time", time);
                 editor.putString("train", train);
                 editor.putString("room", room);
                 editor.putString("seat", seat);
+                editor.putString("checkwindow",checkwindow);
                 //4、完成提交
                 editor.commit();
 
@@ -122,6 +137,8 @@ public class AddrSettingActivity extends Activity {
         no_of_room_et = (EditText) findViewById(R.id.no_of_room);
         no_of_seat_et = (EditText) findViewById(R.id.no_of_seat);
         qrScanBtn = (Button) findViewById(R.id.qrScaner);
+        startCity = (TextView) findViewById(R.id.startCity);
+        finishCity = (TextView) findViewById(R.id.finishCity);
     }
 
     //回调
@@ -139,20 +156,25 @@ public class AddrSettingActivity extends Activity {
                         Log.i(TAG, "Main-resultString" + scanInfo);
                         Toast.makeText(this, scanInfo, Toast.LENGTH_LONG).show();
                         String checked = bundle.getString("checked");
-                        String time, train, room, seat;
                         if (checked.equals("Y")) {
                             try {
-                                time = bundle.getString("time");
+                                startcity = bundle.getString("startcity");
+                                finishcity = bundle.getString("finishcity");
+                                date = bundle.getString("date");
+                                time = bundle.getString("time","default");
                                 train = bundle.getString("train");
                                 room = bundle.getString("room");
                                 seat = bundle.getString("seat");
+                               checkwindow = bundle.getString("checkwindow","default");
                                 no_of_train_et.setText(train);
                                 no_of_room_et.setText(room);
                                 no_of_seat_et.setText(seat);
+                                startCity.setText(startcity);
+                                finishCity.setText(finishcity);
                                 String year, month, day;
-                                year = time.substring(0, 4);
-                                month = time.substring(4, 6);
-                                day = time.substring(6, 8);
+                                year = date.substring(0, 4);
+                                month = date.substring(4, 6);
+                                day = date.substring(6, 8);
                                 Log.e(TAG,year+":"+month+":"+day);
                                 checkTime_dp.updateDate(Integer.parseInt(year), Integer.parseInt(month)-1, Integer.parseInt(day));
                             } catch (Exception e) {

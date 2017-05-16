@@ -178,9 +178,11 @@ public class MainActivity extends Activity {
                 finish();
             }
         });
+
         showPostListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                adapter.getView(position,view,showPostListView);
                 Log.i(TAG, "你点击了第" + position + "项条目");
             }
         });
@@ -212,27 +214,34 @@ public class MainActivity extends Activity {
                         Log.i(TAG, "Main-resultString" + scanInfo);
                         Toast.makeText(this, scanInfo, Toast.LENGTH_LONG).show();
                         String checked = bundle.getString("checked");
-                        String time, train, room, seat;
+                        String startcity,finishcity,date,time, train, room, seat,checkwindow;
                         if (checked.equals("Y")) {
                             try {
+                                startcity = bundle.getString("startcity");
+                                finishcity = bundle.getString("finishcity");
+                                date = bundle.getString("date");
                                 time = bundle.getString("time");
                                 train = bundle.getString("train");
                                 room = bundle.getString("room");
                                 seat = bundle.getString("seat");
+                                checkwindow = bundle.getString("checkwindow");
                                 //   write to comfrence
                                 //1、打开Preferences，名称为addSetting，如果存在则打开它，否则创建新的Preferences
                                 SharedPreferences addrSetting = getSharedPreferences("addrSetting", Activity.MODE_PRIVATE);
                                 //2、让addSetting处于编辑状态
                                 SharedPreferences.Editor editor = addrSetting.edit();
                                 //3、存放数据
-                                editor.putString("checked", "Y");
+                                editor.putString("startcity",startcity);
+                                editor.putString("finishcity",finishcity);
+                                editor.putString("date", date);
                                 editor.putString("time", time);
                                 editor.putString("train", train);
                                 editor.putString("room", room);
                                 editor.putString("seat", seat);
+                                editor.putString("checkwindow",checkwindow);
                                 //4、完成提交
                                 editor.commit();
-                                Toast.makeText(MainActivity.this, " " + time + " " + train + " " + room + " " + seat, Toast.LENGTH_LONG).show();
+                                Toast.makeText(MainActivity.this, " " + date + " " + train + " " + room + " " + seat, Toast.LENGTH_LONG).show();
                                 refreshList();
                             } catch (Exception e) {
                                 return;
@@ -271,11 +280,11 @@ public class MainActivity extends Activity {
         //2、取出数据
         String checked = addrSetting.getString("checked", "N");
         if (checked.equals("Y")) {
-            String time = addrSetting.getString("time", "default");
+            String date = addrSetting.getString("date", "default");
             String train = addrSetting.getString("train", "default");
             String room = addrSetting.getString("room", "default");
             String seat = addrSetting.getString("seat", "default");
-            orderList = ordersDao.getTrainOrder(time + "&"  + train);
+            orderList = ordersDao.getTrainOrder(date + "&"  + train);
         } else {
             orderList = ordersDao.getAllDate();
         }

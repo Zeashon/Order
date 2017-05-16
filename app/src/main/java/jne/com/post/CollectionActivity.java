@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -39,7 +40,7 @@ public class CollectionActivity extends Activity {
         initComponent();
 
         int resNum = 0;
-        ordersDao.getTypePost(2);
+        orderList = ordersDao.getTypePost(4);
         if (orderList != null) {
             adapter = new OrderListAdapter(this, orderList);
             showPostListView.setAdapter(adapter);
@@ -50,6 +51,8 @@ public class CollectionActivity extends Activity {
         } else {
             PostNumTextView.setText("你一条任务都没收藏，快去做任务吧");
         }
+
+
 
         MainPageBtn.setOnClickListener(new View.OnClickListener() {
             @Override

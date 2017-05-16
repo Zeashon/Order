@@ -112,6 +112,13 @@
             android:launchMode="singleTask"
             android:windowSoftInputMode="adjustPan"></activity>
 
+
+        <activity
+            android:name="jne.com.post.MyTicketActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="adjustPan"></activity>
+
     </application>
 
 </manifest>
