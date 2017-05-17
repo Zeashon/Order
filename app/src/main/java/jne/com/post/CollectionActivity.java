@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -20,11 +21,11 @@ public class CollectionActivity extends Activity {
     private ListView showPostListView;
     private List<Order> orderList;
     private OrderListAdapter adapter;
-    private Button ShopPageBtn;
-    private Button NewPostBtn;
-    private Button MessagePageBtn;
-    private Button PersonalPageBtn;
-    private Button MainPageBtn;
+    private LinearLayout NewPostBtn;
+    private LinearLayout MessagePageBtn;
+    private LinearLayout PersonalPageBtn;
+    private LinearLayout MainPageBtn;
+    private LinearLayout ShopPageBtn;
     private TextView PostNumTextView;
 
     @Override
@@ -98,14 +99,13 @@ public class CollectionActivity extends Activity {
     }
 
     private void initComponent() {
-
         showPostListView = (ListView) findViewById(R.id.showPostListView);
 //        showPostListView.addHeaderView(LayoutInflater.from(this).inflate(R.layout.show_post_item_nocoll, null), null, false);
-        ShopPageBtn = (Button) findViewById(R.id.ShopPageBtn);
-        NewPostBtn = (Button) findViewById(R.id.NewPostPageBtn);
-        MessagePageBtn = (Button) findViewById(R.id.messagePageBtn);
-        PersonalPageBtn = (Button) findViewById(R.id.personPageBtn);
-        MainPageBtn = (Button) findViewById(R.id.IndexPageBtn);
+        ShopPageBtn = (LinearLayout) findViewById(R.id.ShopPageBtn);
+        NewPostBtn = (LinearLayout) findViewById(R.id.NewPostPageBtn);
+        MessagePageBtn = (LinearLayout) findViewById(R.id.messagePageBtn);
+        PersonalPageBtn = (LinearLayout) findViewById(R.id.personPageBtn);
+        MainPageBtn = (LinearLayout) findViewById(R.id.IndexPageBtn);
         PostNumTextView = (TextView) findViewById(R.id.PostNumTextView);
     }
 

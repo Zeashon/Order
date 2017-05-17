@@ -6,6 +6,31 @@
     android:orientation="vertical"
     android:padding="0dp">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/theme_blue"
+        android:orientation="horizontal"
+        android:textAlignment="center">
+
+        <Button
+            android:id="@+id/back_to_main"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/icon_back" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="false"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="@string/app_name"
+            android:textColor="@color/common_color"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -640,9 +665,16 @@
         android:layout_height="wrap_content"
         android:background="@android:color/transparent">
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.6dp"
+            android:background="@color/grey_color" />
+
         <RelativeLayout
+            android:id="@+id/bt_main"
             android:layout_width="match_parent"
             android:layout_height="@dimen/bottom_button_l_width"
+            android:layout_marginTop="1dp"
             android:gravity="bottom">
 
             <LinearLayout
@@ -660,6 +692,7 @@
                     android:orientation="horizontal">
 
                     <LinearLayout
+                        android:id="@+id/IndexPageBtn"
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
                         android:layout_weight="1"
@@ -667,11 +700,10 @@
                         android:orientation="vertical">
 
                         <Button
-                            android:id="@+id/IndexPageBtn"
                             android:layout_width="@dimen/bottom_button_s_width"
                             android:layout_height="@dimen/bottom_button_s_width"
                             android:layout_marginTop="1dp"
-                            android:background="@drawable/index_empty" />
+                            android:background="@drawable/index_filled" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -683,6 +715,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/ShopPageBtn"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -690,17 +723,10 @@
                         android:orientation="vertical">
 
                         <Button
-                            android:id="@+id/ShopPageBtn"
                             android:layout_width="@dimen/bottom_button_s_width"
                             android:layout_height="@dimen/bottom_button_s_width"
                             android:layout_marginTop="1dp"
-                            android:background="@drawable/group_empty"
-                            android:visibility="gone"/>
-                        <Button
-                            android:layout_width="@dimen/bottom_button_s_width"
-                            android:layout_height="@dimen/bottom_button_s_width"
-                            android:layout_marginTop="1dp"
-                            android:background="@drawable/shop_empty"/>
+                            android:background="@drawable/shop_empty" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -712,17 +738,18 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/NewPostPageBtn"
                         android:layout_width="@dimen/bottom_button_l_width"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="center"
                         android:orientation="vertical">
+
                         <Button
-                            android:id="@+id/NewPostPageBtn"
                             android:layout_width="@dimen/bottom_button_s_width"
                             android:layout_height="@dimen/bottom_button_s_width"
                             android:layout_marginTop="1dp"
-                            android:background="@drawable/new_post_filled" />
+                            android:background="@drawable/new_post_empty" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -734,6 +761,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/messagePageBtn"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -741,7 +769,6 @@
                         android:orientation="vertical">
 
                         <Button
-                            android:id="@+id/messagePageBtn"
                             android:layout_width="@dimen/bottom_button_s_width"
                             android:layout_height="@dimen/bottom_button_s_width"
                             android:layout_marginTop="1dp"
@@ -757,6 +784,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/personPageBtn"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -764,7 +792,6 @@
                         android:orientation="vertical">
 
                         <Button
-                            android:id="@+id/personPageBtn"
                             android:layout_width="@dimen/bottom_button_s_width"
                             android:layout_height="@dimen/bottom_button_s_width"
                             android:layout_marginTop="1dp"
@@ -782,23 +809,7 @@
             </LinearLayout>
         </RelativeLayout>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:background="@drawable/transparent"
-            android:clickable="false"
-            android:focusable="false"
-            android:focusableInTouchMode="false"
-            android:gravity="center_vertical|center_horizontal"
-            android:scaleType="fitXY"
-            android:visibility="gone">
-
-            <Button
-                android:layout_width="@dimen/bottom_button_s_width"
-                android:layout_height="@dimen/bottom_button_s_width"
-                android:background="@drawable/new_post_empty" />
-
-        </RelativeLayout>
     </RelativeLayout>
+
 
 </LinearLayout>

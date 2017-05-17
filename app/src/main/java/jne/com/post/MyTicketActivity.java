@@ -28,6 +28,7 @@ public class MyTicketActivity extends Activity {
     private TextView checkWindow;
     private TextView tipsTextView;
     private TextView userName;
+    private Button backToPersonBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +37,14 @@ public class MyTicketActivity extends Activity {
         initComponent();
         refreshTicket();
 
+        backToPersonBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MyTicketActivity.this, PersonActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
     private void initComponent() {
@@ -50,6 +59,7 @@ public class MyTicketActivity extends Activity {
         checkWindow = (TextView) findViewById(R.id.checkWindow);
         tipsTextView = (TextView) findViewById(R.id.tipsTextView);
         userName = (TextView) findViewById(R.id.user_name);
+        backToPersonBtn = (Button) findViewById(R.id.back_to_person);
     }
 
     @Override

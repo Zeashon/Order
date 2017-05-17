@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -15,10 +16,11 @@ import jne.com.R;
 
 public class PromotionActivity extends Activity {
 
-    private Button ShopPageBtn;
-    private Button NewPostBtn;
-    private Button MessagePageBtn;
-    private Button MainPageBtn;
+    private LinearLayout NewPostBtn;
+    private LinearLayout MessagePageBtn;
+    private LinearLayout PersonalPageBtn;
+    private LinearLayout MainPageBtn;
+    private LinearLayout ShopPageBtn;
 
     public PromotionActivity() {
     }
@@ -49,7 +51,7 @@ public class PromotionActivity extends Activity {
         ShopPageBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PromotionActivity.this, NearbyActivity.class);
+                Intent intent = new Intent(PromotionActivity.this, ShoppingCartActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -62,14 +64,23 @@ public class PromotionActivity extends Activity {
                 finish();
             }
         });
+        PersonalPageBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PromotionActivity.this, PersonActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
 
     private void initComponent(){
-        ShopPageBtn = (Button) findViewById(R.id.ShopPageBtn);
-        NewPostBtn = (Button) findViewById(R.id.NewPostPageBtn);
-        MessagePageBtn = (Button) findViewById(R.id.messagePageBtn);
-        MainPageBtn = (Button) findViewById(R.id.IndexPageBtn);
+        ShopPageBtn = (LinearLayout) findViewById(R.id.ShopPageBtn);
+        NewPostBtn = (LinearLayout) findViewById(R.id.NewPostPageBtn);
+        MessagePageBtn = (LinearLayout) findViewById(R.id.messagePageBtn);
+        MainPageBtn = (LinearLayout) findViewById(R.id.IndexPageBtn);
+        PersonalPageBtn = (LinearLayout) findViewById(R.id.personPageBtn);
     }
 
     @Override

@@ -135,21 +135,21 @@ public class OrderCheckActivity extends ShoppingCartActivity {
                         Log.i(TAG, "Main-resultString" + scanInfo);
                         Toast.makeText(this, scanInfo, Toast.LENGTH_LONG).show();
                         String checked = bundle.getString("checked");
-                        String time, train, room, seat;
+                        String date, train, room, seat;
                         if (checked.equals("Y")) {
                             try {
-                                time = bundle.getString("time");
+                                date = bundle.getString("date");
                                 train = bundle.getString("train");
                                 room = bundle.getString("room");
                                 seat = bundle.getString("seat");
                                 finishPlace.setText(train +"/"+room+"车"+"/"+seat);
                                 String year, month, day;
-                                year = time.substring(0, 4);
-                                month = time.substring(4, 6);
-                                day = time.substring(6, 8);
+                                year = date.substring(0, 4);
+                                month = date.substring(4, 6);
+                                day = date.substring(6, 8);
                                 Log.e(TAG, year + ":" + month + ":" + day);
                                 finishTime.setText(Integer.parseInt(year)+"."+Integer.parseInt(month)+"."+ Integer.parseInt(day));
-                                finishCity.setText(bundle.getString("city"));
+                                finishCity.setText(bundle.getString("finishcity"));
                             } catch (Exception e) {
                                 return;
                             }

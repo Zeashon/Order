@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -18,12 +19,11 @@ public class SearchActivity extends Activity {
     private OrderDao ordersDao;
     private ListView showPostListView;
     private List<Order> orderList;
-    private OrderListAdapter adapter;
-    private Button ShopPageBtn;
-    private Button NewPostBtn;
-    private Button MessagePageBtn;
-    private Button PersonalPageBtn;
-    private Button MainPageBtn;
+    private OrderListAdapter adapter;    private LinearLayout NewPostBtn;
+    private LinearLayout MessagePageBtn;
+    private LinearLayout PersonalPageBtn;
+    private LinearLayout MainPageBtn;
+    private LinearLayout ShopPageBtn;
     private Button SearchBtn;
     private EditText SearchEditText;
 
@@ -113,11 +113,11 @@ public class SearchActivity extends Activity {
 
         showPostListView = (ListView) findViewById(R.id.showPostListView);
 //        showPostListView.addHeaderView(LayoutInflater.from(this).inflate(R.layout.show_post_item, null), null, false);
-        ShopPageBtn = (Button) findViewById(R.id.ShopPageBtn);
-        NewPostBtn = (Button) findViewById(R.id.NewPostPageBtn);
-        MessagePageBtn = (Button) findViewById(R.id.messagePageBtn);
-        PersonalPageBtn = (Button) findViewById(R.id.personPageBtn);
-        MainPageBtn = (Button) findViewById(R.id.IndexPageBtn);
+        ShopPageBtn = (LinearLayout) findViewById(R.id.ShopPageBtn);
+        NewPostBtn = (LinearLayout) findViewById(R.id.NewPostPageBtn);
+        MessagePageBtn = (LinearLayout) findViewById(R.id.messagePageBtn);
+        PersonalPageBtn = (LinearLayout) findViewById(R.id.personPageBtn);
+        MainPageBtn = (LinearLayout) findViewById(R.id.IndexPageBtn);
         SearchBtn = (Button) findViewById(R.id.main_search_button);
         SearchEditText = (EditText) findViewById(R.id.SearchEditText);
     }

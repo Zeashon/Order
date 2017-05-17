@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,10 +23,11 @@ public class NewPostActivity extends Activity {
 
     private String TAG = "NewPostActivity";
     private OrderDao ordersDao;
-    private Button ShopPageBtn;
-    private Button MessagePageBtn;
-    private Button PersonalPageBtn;
-    private Button MainPageBtn;
+    private LinearLayout NewPostBtn;
+    private LinearLayout MessagePageBtn;
+    private LinearLayout PersonalPageBtn;
+    private LinearLayout MainPageBtn;
+    private LinearLayout ShopPageBtn;
     private DatePicker FnishTimeDatePicker;
     private EditText FnishPlaceEditText;
     private EditText RemunerationEditorText;
@@ -164,10 +166,10 @@ public class NewPostActivity extends Activity {
 
     private void initComponent() {
 
-        ShopPageBtn = (Button) findViewById(R.id.ShopPageBtn);
-        MessagePageBtn = (Button) findViewById(R.id.messagePageBtn);
-        PersonalPageBtn = (Button) findViewById(R.id.personPageBtn);
-        MainPageBtn = (Button) findViewById(R.id.IndexPageBtn);
+        ShopPageBtn = (LinearLayout) findViewById(R.id.ShopPageBtn);
+        MessagePageBtn = (LinearLayout) findViewById(R.id.messagePageBtn);
+        PersonalPageBtn = (LinearLayout) findViewById(R.id.personPageBtn);
+        MainPageBtn = (LinearLayout) findViewById(R.id.IndexPageBtn);
         FnishPlaceEditText = (EditText) findViewById(R.id.finishPlace);
         FinishStation = (EditText) findViewById(R.id.finishStation);
         FnishTimeDatePicker = (DatePicker) findViewById(R.id.finishTime);

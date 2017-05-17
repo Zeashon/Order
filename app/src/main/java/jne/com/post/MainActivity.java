@@ -29,13 +29,13 @@ public class MainActivity extends Activity {
     private List<Order> orderList;
     private OrderListAdapter adapter;
     private LinearLayout SearchPageBtn;
-    private Button NewPostBtn;
-    private Button MessagePageBtn;
-    private Button PersonalPageBtn;
-    private Button MainPageBtn;
+    private LinearLayout NewPostBtn;
+    private LinearLayout MessagePageBtn;
+    private LinearLayout PersonalPageBtn;
+    private LinearLayout MainPageBtn;
+    private LinearLayout ShopPageBtn;
+    private LinearLayout qrScanBtn;
     private ImageView PromotionPageBtn;
-    private Button ShopPageBtn;
-    private Button qrScanBtn;
 
     //    top Ad
     private ViewPager viewPager;
@@ -265,13 +265,13 @@ public class MainActivity extends Activity {
         showPostListView = (ListView) findViewById(R.id.showPostListView);
 //        showPostListView.addHeaderView(LayoutInflater.from(this).inflate(R.layout.show_post_item, null), null, false);
         SearchPageBtn = (LinearLayout) findViewById(R.id.main_top);
-        NewPostBtn = (Button) findViewById(R.id.NewPostPageBtn);
-        MessagePageBtn = (Button) findViewById(R.id.messagePageBtn);
-        PersonalPageBtn = (Button) findViewById(R.id.personPageBtn);
-        MainPageBtn = (Button) findViewById(R.id.IndexPageBtn);
-        ShopPageBtn = (Button) findViewById(R.id.ShopPageBtn);
+        NewPostBtn = (LinearLayout) findViewById(R.id.NewPostPageBtn);
+        MessagePageBtn = (LinearLayout) findViewById(R.id.messagePageBtn);
+        PersonalPageBtn = (LinearLayout) findViewById(R.id.personPageBtn);
+        MainPageBtn = (LinearLayout) findViewById(R.id.IndexPageBtn);
+        ShopPageBtn = (LinearLayout) findViewById(R.id.ShopPageBtn);
         viewPager = (ViewPager) findViewById(R.id.viewpager1);
-        qrScanBtn = (Button) findViewById(R.id.qrScaner);
+        qrScanBtn = (LinearLayout) findViewById(R.id.qrScaner);
     }
 
     private void refreshList() {

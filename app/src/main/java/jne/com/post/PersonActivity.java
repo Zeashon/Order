@@ -20,10 +20,11 @@ import jne.com.R;
 
 public class PersonActivity extends Activity {
 
-    private Button ShopPageBtn;
-    private Button NewPostBtn;
-    private Button MessagePageBtn;
-    private Button MainPageBtn;
+    private LinearLayout NewPostBtn;
+    private LinearLayout MessagePageBtn;
+    private LinearLayout PersonalPageBtn;
+    private LinearLayout MainPageBtn;
+    private LinearLayout ShopPageBtn;
     private LinearLayout MyPostBtn;
     private LinearLayout AddrSettingPageBtn;
     private LinearLayout AdvicePageBtn;
@@ -113,10 +114,10 @@ public class PersonActivity extends Activity {
 
     private void initComponent() {
         MyPostBtn = (LinearLayout) findViewById(R.id.mypost_btn);
-        ShopPageBtn = (Button) findViewById(R.id.ShopPageBtn);
-        NewPostBtn = (Button) findViewById(R.id.NewPostPageBtn);
-        MessagePageBtn = (Button) findViewById(R.id.messagePageBtn);
-        MainPageBtn = (Button) findViewById(R.id.IndexPageBtn);
+        ShopPageBtn = (LinearLayout) findViewById(R.id.ShopPageBtn);
+        NewPostBtn = (LinearLayout) findViewById(R.id.NewPostPageBtn);
+        MessagePageBtn = (LinearLayout) findViewById(R.id.messagePageBtn);
+        MainPageBtn = (LinearLayout) findViewById(R.id.IndexPageBtn);
         AddrSettingPageBtn = (LinearLayout)findViewById(R.id.addr_setbtn);
         AdvicePageBtn = (LinearLayout)findViewById(R.id.advicebtn);
         TrainStateQueryBtn = (LinearLayout) findViewById(R.id.trainStateQuerybtn);

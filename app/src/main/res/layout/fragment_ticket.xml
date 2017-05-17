@@ -15,7 +15,7 @@
         android:textAlignment="center">
 
         <Button
-            android:id="@+id/back_to_main"
+            android:id="@+id/back_to_person"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_centerVertical="true"
