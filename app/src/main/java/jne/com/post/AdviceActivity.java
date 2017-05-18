@@ -2,6 +2,7 @@ package jne.com.post;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -13,8 +14,6 @@ import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
-import java.util.StringTokenizer;
 
 import jne.com.R;
 
@@ -24,6 +23,9 @@ public class AdviceActivity extends Activity {
     private Button advice_cancel_btn;
     private EditText advice_title_et;
     private EditText advice_content_et;
+    final int STATE_OK = 1;
+    final int STATE_NO = 0;
+    private AdviceDao advicesDao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,11 @@ public class AdviceActivity extends Activity {
         setContentView(R.layout.fragment_advice);
 
         initComponent();
+
+        advicesDao = new AdviceDao(this);
+        if (!advicesDao.isDataExist()) {
+            advicesDao.initTable();
+        }
 
         advice_cancel_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,8 +57,8 @@ public class AdviceActivity extends Activity {
                 if (title.length() == 0) {
                     Toast.makeText(AdviceActivity.this, "请填写标题。", Toast.LENGTH_LONG).show();
                     return;
-                } else if (content.length() < 15) {
-                    Toast.makeText(AdviceActivity.this, "内容不少于15字。", Toast.LENGTH_LONG).show();
+                } else if (content.length() < 5) {
+                    Toast.makeText(AdviceActivity.this, "内容不少于5字。", Toast.LENGTH_LONG).show();
                     return;
                 }
                 //        get Time
@@ -62,11 +69,36 @@ public class AdviceActivity extends Activity {
                 //      get user
                 String user = "Zeashon";
 
-                //TODO   send to server
+                //   send to server
+                //   write to comfrence
+                //1、打开Preferences，名称为advice，如果存在则打开它，否则创建新的Preferences
+                SharedPreferences advice = getSharedPreferences("advice", Activity.MODE_PRIVATE);
+                //2、让addSetting处于编辑状态
+                SharedPreferences.Editor editor = advice.edit();
+                //3、存放数据
+                editor.putString("checked", "Y");
+                editor.putString("user", user);
+                editor.putString("title",title);
+                editor.putString("content",content);
+                editor.putString("time", time);
+                editor.putInt("state",STATE_NO);
+                //4、完成提交
+                editor.commit();
 
-                //      turn back to PA
-                Intent intent = new Intent(AdviceActivity.this, PersonActivity.class);
-                startActivity(intent);
+                //写入数据库
+
+                Advice myAdvice = new Advice(time,user,title,content,STATE_NO);
+                boolean res;
+                res = advicesDao.insertData(myAdvice);
+                if (res) {
+                    Toast.makeText(getApplicationContext(), "感谢您的反馈", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(AdviceActivity.this, PersonActivity.class);
+                    finish();
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(getApplicationContext(), "系统出错，请稍候重试", Toast.LENGTH_SHORT).show();
+                    return;
+                }
             }
         });
 

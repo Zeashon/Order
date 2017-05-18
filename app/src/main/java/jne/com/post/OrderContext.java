@@ -3,7 +3,7 @@ package jne.com.post;
 import android.content.Context;
 
 /**
- * 全局可用的context对象  单例模式:http://www.jianshu.com/p/8b59089a12f6
+ * 全局可用的context对象
  */
 public class OrderContext {
     private static OrderContext instance;
