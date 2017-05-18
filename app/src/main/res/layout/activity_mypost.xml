@@ -75,6 +75,7 @@
             android:background="@color/grey_color" />
 
         <RelativeLayout
+            android:id="@+id/bt_main"
             android:layout_width="match_parent"
             android:layout_height="@dimen/bottom_button_l_width"
             android:layout_marginTop="1dp"
@@ -95,18 +96,21 @@
                     android:orientation="horizontal">
 
                     <LinearLayout
+                        android:id="@+id/IndexPageBtn"
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
                         android:layout_weight="1"
+                        android:clickable="true"
                         android:gravity="center"
                         android:orientation="vertical">
 
                         <Button
-                            android:id="@+id/IndexPageBtn"
                             android:layout_width="@dimen/bottom_button_s_width"
                             android:layout_height="@dimen/bottom_button_s_width"
                             android:layout_marginTop="1dp"
-                            android:background="@drawable/index_filled" />
+                            android:background="@drawable/index_empty"
+                            android:clickable="false"
+                            android:focusable="false" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -118,18 +122,21 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/ShopPageBtn"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:clickable="true"
                         android:gravity="center"
                         android:orientation="vertical">
 
                         <Button
-                            android:id="@+id/ShopPageBtn"
                             android:layout_width="@dimen/bottom_button_s_width"
                             android:layout_height="@dimen/bottom_button_s_width"
                             android:layout_marginTop="1dp"
-                            android:background="@drawable/shop_empty" />
+                            android:background="@drawable/shop_empty"
+                            android:clickable="false"
+                            android:focusable="false" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -141,18 +148,21 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/NewPostPageBtn"
                         android:layout_width="@dimen/bottom_button_l_width"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:clickable="true"
                         android:gravity="center"
                         android:orientation="vertical">
 
                         <Button
-                            android:id="@+id/NewPostPageBtn"
                             android:layout_width="@dimen/bottom_button_s_width"
                             android:layout_height="@dimen/bottom_button_s_width"
                             android:layout_marginTop="1dp"
-                            android:background="@drawable/new_post_empty" />
+                            android:background="@drawable/new_post_filled"
+                            android:clickable="false"
+                            android:focusable="false" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -164,18 +174,21 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/messagePageBtn"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:clickable="true"
                         android:gravity="center"
                         android:orientation="vertical">
 
                         <Button
-                            android:id="@+id/messagePageBtn"
                             android:layout_width="@dimen/bottom_button_s_width"
                             android:layout_height="@dimen/bottom_button_s_width"
                             android:layout_marginTop="1dp"
-                            android:background="@drawable/collection_empty" />
+                            android:background="@drawable/collection_empty"
+                            android:clickable="false"
+                            android:focusable="false" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -187,18 +200,21 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/personPageBtn"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:clickable="true"
                         android:gravity="center"
                         android:orientation="vertical">
 
                         <Button
-                            android:id="@+id/personPageBtn"
                             android:layout_width="@dimen/bottom_button_s_width"
                             android:layout_height="@dimen/bottom_button_s_width"
                             android:layout_marginTop="1dp"
-                            android:background="@drawable/person_empty" />
+                            android:background="@drawable/person_empty"
+                            android:clickable="false"
+                            android:focusable="false" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -212,23 +228,6 @@
             </LinearLayout>
         </RelativeLayout>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:background="@drawable/transparent"
-            android:clickable="false"
-            android:focusable="false"
-            android:focusableInTouchMode="false"
-            android:gravity="center_vertical|center_horizontal"
-            android:scaleType="fitXY"
-            android:visibility="gone">
-
-            <Button
-                android:layout_width="@dimen/bottom_button_s_width"
-                android:layout_height="@dimen/bottom_button_s_width"
-                android:background="@drawable/new_post_empty" />
-
-        </RelativeLayout>
     </RelativeLayout>
 
 

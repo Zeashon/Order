@@ -363,8 +363,8 @@ public class OrderDao {
             db = ordersDBHelper.getReadableDatabase();
             cursor = db.query(OrderDBHelper.TABLE_NAME,
                     ORDER_COLUMNS,
-                    "FinishPlace = ? or FinishTime = ?",
-                    new String[]{keyWord, keyWord},
+                    "FinishPlace LIKE ? or FinishTime = ?",
+                    new String[]{"%" + keyWord + "%", keyWord},
                     null, null, null);
 
             if (cursor.getCount() > 0) {
@@ -389,7 +389,7 @@ public class OrderDao {
         return null;
     }
 
-    //    模糊查询车次（格式：03车D1234）&& 精准时间 （2016.06.01）
+    //    查询车次（格式：03车D1234）&& 精准时间 （2016.06.01）
     public List<Order> getTrainOrder(String keyWord) {
         SQLiteDatabase db = null;
         Cursor cursor = null;
