@@ -53,7 +53,7 @@ public class GoodsItem {
         typeNameList.add("药品");
         typeNameList.add("药品");
         imgSrcList = new ArrayList<Integer>();
-        if (true) {
+        if (true) {//Write img
             imgSrcList.add(R.drawable.shop_product_101);
             imgSrcList.add(R.drawable.shop_product_102);
             imgSrcList.add(R.drawable.shop_product_103);
