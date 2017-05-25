@@ -3,6 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.0"
+    useLibrary 'org.apache.http.legacy'
 
     defaultConfig {
         applicationId "jne.com"
@@ -21,11 +22,16 @@ android {
 def SUPPORT_VERSION = "24.2.1"
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    testCompile 'junit:junit:4.12'
+    testCompile 'junit:junit:4.5'
     compile 'com.android.support:appcompat-v7:' + SUPPORT_VERSION
     compile 'com.android.support:recyclerview-v7:' + SUPPORT_VERSION
     compile 'com.android.support:design:' + SUPPORT_VERSION
     compile 'com.flipboard:bottomsheet-core:1.5.1'
     compile 'se.emilsjolander:stickylistheaders:2.7.0'
     compile files('src/main/java/lib/zxing.jar')
+    compile 'commons-lang:commons-lang:2.6'
+    //    compile 'org.apache.httpcomponents:httpcore:4.2.1'
+    //    compile 'org.eclipse.jetty:jetty-util:9.3.7.v20160115'
+    //    compile 'org.apache.httpcomponents:httpclient:4.2.1'
+    compile 'com.google.code.gson:gson:2.8.0'
 }
