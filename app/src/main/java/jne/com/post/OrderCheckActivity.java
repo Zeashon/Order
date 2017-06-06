@@ -169,7 +169,7 @@ public class OrderCheckActivity extends ShoppingCartActivity {
 
     @Override
     public void onBackPressed() {
-        Intent intent = new Intent(OrderCheckActivity.this, MainActivity.class);
+        Intent intent = new Intent(OrderCheckActivity.this, ShoppingCartActivity.class);
         startActivity(intent);
         super.onBackPressed();
         finish();

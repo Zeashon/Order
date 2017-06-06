@@ -61,7 +61,8 @@
                         android:layout_gravity="center"
                         android:layout_margin="10dp"
                         android:background="@drawable/icon_right"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/black"
+                        android:visibility="gone"/>
 
                 </LinearLayout>
 
@@ -282,7 +283,8 @@
             android:layout_marginTop="20dp"
             android:background="@color/theme_blue"
             android:orientation="horizontal"
-            android:weightSum="15">
+            android:weightSum="15"
+            android:visibility="gone">
 
             <LinearLayout
                 android:id="@+id/trainStateQuerybtn"
